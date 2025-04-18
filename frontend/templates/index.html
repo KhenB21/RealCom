@@ -45,7 +45,6 @@
     </div>
     <!-- FIRST SECTION -->
     <div class="container-one" id="services">
-      
       <div class="container-one-img">
         <div class="dim-layer">
           <div class="text-regislog">
@@ -70,14 +69,13 @@
         <div class="dim-layer">
           <img src="{% static 'images/transp-greenyellow-logo.png' %}" alt="Logo" class="logo-left" />
           <div class="text-miniabout">
-            <h1><strong>AutoMobil Sport Corporation</strong></h1>
-            <p>We have been providing the best car care since 2003.
-            Serving excellence in the ever-evolving automotive industry.<p>
-            <br>
-            <p>AutoSport started as a small auto repair shop like any other. 
-            Through sheer hard work and perseverance, we were able to establish an image of our own, successfully carved our name in the minds of our customers and those who they spread good word on us.<p>
-            <br>
-            <p>Not a second passed did our grip on committing to producing high quality results loosen. We have been, and continue to, giving the best and what you and your car want with the best hands and mind.</p>
+            <div class="text-block">
+              <h1><strong>AutoMobil Sport Corporation</strong></h1>
+              <p>We have been providing the best car care since 2003.</p>
+              <p>Serving excellence in the ever-evolving automotive industry.</p>
+              <p>AutoSport started as a small auto repair shop like any other. Through sheer hard work and perseverance, we were able to establish an image of our own, successfully carved our name in the minds of our customers and those who they spread good word on us.</p>
+              <p>Not a second passed did our grip on committing to producing high quality results loosen. We have been, and continue to, giving the best and what you and your car want with the best hands and mind.</p>
+            </div>            
           </div>
         </div>
       </div>
@@ -121,7 +119,7 @@
         }
         
         .text-miniabout {
-          position: relative;           
+          position: relative;
           font-family: 'Inter', sans-serif;
           font-size: 40px;
           font-weight: normal;
@@ -132,13 +130,16 @@
           margin: 60px;
         }
         
-        .text-miniabout p {
+        .text-block {
+          max-width: 600px;
+          text-align: justify;
+        }
+        
+        .text-block p {
           font-size: 14px;
           font-weight: 300;
-          text-align: justify;
-          max-width: 600px;
-          margin: 0;
-        }
+          margin-bottom: 10px; 
+        }      
 
         html, body {
           height: 100%;
