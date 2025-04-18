@@ -44,30 +44,41 @@
         </div>
     </div>
     <!-- FIRST SECTION -->
-    <div class="container-one" id="bookapp">
+    <div class="container-one" id="services">
+      
       <div class="container-one-img">
-        <div class="text-regislog">
-          <p style="margin: 0;">Register to our</p>
-          <p style="margin: 0;"> <strong>online booking</strong> and <strong>service tracker</strong></p>
-          <div class="button-group">
-            <button type="button" class="btn btn-warning" onclick="window.location.href='register';">
-              Register
-            </button>
-            <button type="button" class="btn btn-success" onclick="window.location.href='login';">
-              Login
-            </button>
+        <div class="dim-layer">
+          <div class="text-regislog">
+            <p style="margin: 0;">Register to our</p>
+            <p style="margin: 0;"> <strong>online booking</strong> and <strong>service tracker</strong></p>
+            <div class="button-group">
+              <button type="button" class="btn btn-warning" onclick="window.location.href='register';">
+                Register
+              </button>
+              <button type="button" class="btn btn-success" onclick="window.location.href='login';">
+                Login
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <!-- SECOND SECTION -->
-    <div class="container-one" id="bookapp">
+    <div class="container-one" id="gallery">
       <div class="container-two-img">
-        <div class="text-regislog">
-          <p style="margin: 0;">Register to our</p>
-          <p style="margin: 0;"> <strong>online booking</strong> and <strong>service tracker</strong></p>
-          
+        <div class="dim-layer">
+          <img src="{% static 'images/transp-greenyellow-logo.png' %}" alt="Logo" class="logo-left" />
+          <div class="text-miniabout">
+            <h1><strong>AutoMobil Sport Corporation</strong></h1>
+            <p>We have been providing the best car care since 2003.
+            Serving excellence in the ever-evolving automotive industry.<p>
+            <br>
+            <p>AutoSport started as a small auto repair shop like any other. 
+            Through sheer hard work and perseverance, we were able to establish an image of our own, successfully carved our name in the minds of our customers and those who they spread good word on us.<p>
+            <br>
+            <p>Not a second passed did our grip on committing to producing high quality results loosen. We have been, and continue to, giving the best and what you and your car want with the best hands and mind.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -76,18 +87,57 @@
 
 
       <style>
+        .logo-left {
+          position: absolute;
+          top: 10%;
+          left: 10px;              
+          transform: translateY(-50%);
+          height: 60px;              
+          opacity: 0.9;             
+          z-index: 2;               
+        }
 
         .container-two-img {
           position: relative;
           border-radius: 10px;
-          width: 1280px; /* Adjust to full width of the container */
-          height: 375px; /* Set height to match your image */
-          margin-top: 132px;
-          margin-bottom: 132px;
-          display: inline-block;
+          width: 1280px;
+          height: 375px;
+          margin: 132px auto;
           background-image: url("{% static 'images/service-exterior.jpg' %}");
           background-size: cover;
           background-position: center;
+          overflow: hidden; 
+        }
+        
+        .dim-layer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.4); 
+          z-index: 1;
+          border-radius: 10px;
+        }
+        
+        .text-miniabout {
+          position: relative;           
+          font-family: 'Inter', sans-serif;
+          font-size: 40px;
+          font-weight: normal;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          margin: 60px;
+        }
+        
+        .text-miniabout p {
+          font-size: 14px;
+          font-weight: 300;
+          text-align: justify;
+          max-width: 600px;
+          margin: 0;
         }
 
         html, body {
@@ -126,9 +176,8 @@
           
           background-image: url("{% static 'images/transparent-logo.png' %}");
           background-repeat: no-repeat;
-          background-position: center 0px; /* Push logo closer to top */
-          background-size: auto 250px;     /* Adjust logo height as needed */
-          
+          background-position: center 0px; 
+          background-size: auto 250px;    
           font-family: 'Inter', sans-serif;
           font-size: 13px;
           color: white;
@@ -137,7 +186,7 @@
           align-items: center;
           margin-top: 1px;
           justify-content: center;
-          z-index: 2;
+
         }
         
         .container-one {
@@ -159,17 +208,6 @@
           background-position: center;
         }
         
-        .container-one-img::after {
-          content: ''; 
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.4); 
-          border-radius: 10px; 
-          z-index: 1;
-        }
       
         .navbar {
           position: absolute;
