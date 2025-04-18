@@ -43,86 +43,71 @@
           </div>
         </div>
     </div>
-    <!-- Additional content below to make it scrollable -->
+    <!-- FIRST SECTION -->
     <div class="container-one" id="bookapp">
       <div class="container-one-img">
         <div class="text-regislog">
           <p style="margin: 0;">Register to our</p>
           <p style="margin: 0;"> <strong>online booking</strong> and <strong>service tracker</strong></p>
           <div class="button-group">
-            <button
-              type="button"
-              class="btn btn-warning"
-              onclick="window.location.href='register';"
-            >
+            <button type="button" class="btn btn-warning" onclick="window.location.href='register';">
               Register
             </button>
-  
-            <button
-              type="button"
-              class="btn btn-success"
-              class="btn btn-success"
-              onclick="window.location.href='login';"
-            >
+            <button type="button" class="btn btn-success" onclick="window.location.href='login';">
               Login
             </button>
           </div>
         </div>
-        
       </div>
     </div>
-  </div>  
 
-      {% comment %} <div class="image-bar">
-        <img src="{% static 'images/automobilLogo.svg'%}" alt="" />
-      </div>
-      <div class="login-bar">
-        <p><strong>Register to access our</strong></p>
-        <p>
-          <strong>Online Booking </strong>and <strong>Service Tracker</strong>
-        </p>
-        <div class="button-group">
-          <button
-            type="button"
-            class="btn btn-warning"
-            onclick="window.location.href='register';"
-          >
-            Register
-          </button>
-
-          <button
-            type="button"
-            class="btn btn-success"
-            class="btn btn-success"
-            onclick="window.location.href='login';"
-          >
-            Login
-          </button>
+    <!-- SECOND SECTION -->
+    <div class="container-one" id="bookapp">
+      <div class="container-two-img">
+        <div class="text-regislog">
+          <p style="margin: 0;">Register to our</p>
+          <p style="margin: 0;"> <strong>online booking</strong> and <strong>service tracker</strong></p>
+          
         </div>
       </div>
-    </div> {% endcomment %}
+    </div>
+
+  </div>  
+
 
       <style>
+
+        .container-two-img {
+          position: relative;
+          border-radius: 10px;
+          width: 1280px; /* Adjust to full width of the container */
+          height: 375px; /* Set height to match your image */
+          margin-top: 132px;
+          margin-bottom: 132px;
+          display: inline-block;
+          background-image: url("{% static 'images/service-exterior.jpg' %}");
+          background-size: cover;
+          background-position: center;
+        }
 
         html, body {
           height: 100%;
           margin: 0;
           padding: 0;
-          scroll-behavior: smooth;
         }
         
         .scroll-container {
           height: 100vh;
           overflow-y: scroll;
           scroll-snap-type: y mandatory;
-        }
+          scroll-behavior: smooth; /* Enable smooth scrolling for the container */
+      }
         
         .scroll-container > div {
           height: 100vh;
           scroll-snap-align: start;
         }
-        
-
+      
         .btn {
           background-color: transparent;
           color: white;
@@ -154,7 +139,6 @@
           justify-content: center;
           z-index: 2;
         }
-        
         
         .container-one {
           display: flex;
