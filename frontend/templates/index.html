@@ -21,32 +21,57 @@
   </head>
   <body>
     <!-- In your template -->
+  <div class="scroll-container">
     <div class="image-section" id="home">
       <nav class="navbar">
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact Us</a></li>
           <li><a href="#bookapp">Book an Appointment</a></li>
           <li><a href="#autocareplus">AutoCare+</a></li>
         </ul>
       </nav>
-        <div class="text">
+        <div class="text-tagbooknow">
           <div class="tagline">
             <p>Quality service with pride.</p>
           </div>
           <div class="button">
-            <button class="btnBooknow">Book now</button>
+            <button class="btnBooknow">Book Now</button>
           </div>
         </div>
     </div>
     <!-- Additional content below to make it scrollable -->
-    <div class="container" id="about">
-
-
+    <div class="container-one" id="bookapp">
+      <div class="container-one-img">
+        <div class="text-regislog">
+          <p style="margin: 0;">Register to our</p>
+          <p style="margin: 0;"> <strong>online booking</strong> and <strong>service tracker</strong></p>
+          <div class="button-group">
+            <button
+              type="button"
+              class="btn btn-warning"
+              onclick="window.location.href='register';"
+            >
+              Register
+            </button>
+  
+            <button
+              type="button"
+              class="btn btn-success"
+              class="btn btn-success"
+              onclick="window.location.href='login';"
+            >
+              Login
+            </button>
+          </div>
+        </div>
+        
+      </div>
     </div>
+  </div>  
 
       {% comment %} <div class="image-bar">
         <img src="{% static 'images/automobilLogo.svg'%}" alt="" />
@@ -78,12 +103,88 @@
     </div> {% endcomment %}
 
       <style>
-        body {
+
+        html, body {
+          height: 100%;
           margin: 0;
           padding: 0;
-        }
-        html {
           scroll-behavior: smooth;
+        }
+        
+        .scroll-container {
+          height: 100vh;
+          overflow-y: scroll;
+          scroll-snap-type: y mandatory;
+        }
+        
+        .scroll-container > div {
+          height: 100vh;
+          scroll-snap-align: start;
+        }
+        
+
+        .btn {
+          background-color: transparent;
+          color: white;
+          border: 1px solid white;
+          padding: 5px 10px;
+          margin-top: 10px;
+          border-radius: 10px;
+          font-family: 'Inter', sans-serif;
+          font-size: 13px;
+        }
+
+        .text-regislog {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          
+          background-image: url("{% static 'images/transparent-logo.png' %}");
+          background-repeat: no-repeat;
+          background-position: center 0px; /* Push logo closer to top */
+          background-size: auto 250px;     /* Adjust logo height as needed */
+          
+          font-family: 'Inter', sans-serif;
+          font-size: 13px;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 1px;
+          justify-content: center;
+          z-index: 2;
+        }
+        
+        
+        .container-one {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        
+        .container-one-img {
+          position: relative;
+          border-radius: 10px;
+          width: 1280px; /* Adjust to full width of the container */
+          height: 375px; /* Set height to match your image */
+          margin-top: 132px;
+          margin-bottom: 132px;
+          display: inline-block;
+          background-image: url("{% static 'images/appoint-pic.jpg' %}");
+          background-size: cover;
+          background-position: center;
+        }
+        
+        .container-one-img::after {
+          content: ''; 
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.4); 
+          border-radius: 10px; 
+          z-index: 1;
         }
       
         .navbar {
@@ -112,6 +213,7 @@
         .nav-links li a {
           text-decoration: none;
           color: white;
+          mix-blend-mode: difference; /* Inverts color based on background */
           font-family: 'Inter', sans-serif;
           font-weight: 300;
           font-size: 16px;
@@ -120,44 +222,24 @@
         .nav-links li a:hover {
           text-decoration: underline;
         }
-      
-        .left-links {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          align-items: start;
-          margin: 0;
-          padding: 0;
-          width: 100%;
-        }
-      
-        .left-links li a {
-          text-decoration: none;
-          color: rgb(0, 0, 0);
-          font-weight: bold;
-          font-size: 16px;
-        }
-      
-        .left-links li a:hover {
-          text-decoration: underline;
-        }
-      
+    
         .image-section {
           background-image: url("{% static 'images/backgroundMain.png' %}");
           background-size: cover;
           background-position: center;
-          height: 928px;
+          height: 629px;
           width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
         }
       
-        .text {
+        .text-tagbooknow {
           background-image: url("{% static 'images/automobilLogo.svg' %}");
           background-size: contain;
           background-repeat: no-repeat;
           background-position: top;
+          font-family: 'Inter', sans-serif;
           height: 500px;
           width: 400px;
           margin: auto;
@@ -166,6 +248,7 @@
           align-items: center;
           justify-content: flex-end;
         }
+
       
         .under-svg-img {
           width: 100%;
@@ -201,19 +284,7 @@
         .hover-link:hover {
           background-color: #f0ad4e; /* Change to any hover color */
         }
-      
-        .left-links li a {
-          text-decoration: none;
-          color: #000;
-          font-weight: bold;
-          font-size: 16px;
-        }
-        .left-bar {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 30%;
-        }
+    
         .image-bar {
           width: 30%;
           height: 928px;
@@ -257,9 +328,13 @@
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
           transform: scale(1.05);
         }
+
         /* Medium screens (tablets) */
         @media (max-width: 992px) {
           .image-bar img {
+            max-width: 300px;
+          }
+          .container-one-img img {
             max-width: 300px;
           }
         }
@@ -269,11 +344,17 @@
           .image-bar img {
             max-width: 200px;
           }
+          .container-one-img img {
+            max-width: 200px;
+          }
         }
       
         /* Extra small screens */
         @media (max-width: 480px) {
           .image-bar img {
+            max-width: 150px;
+          }
+          .container-one-img img {
             max-width: 150px;
           }
         }
