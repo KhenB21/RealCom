@@ -21,36 +21,34 @@
   </head>
   <body>
     <!-- In your template -->
-    <div class="image-section">
+    <div class="image-section" id="home">
       <nav class="navbar">
         <ul class="nav-links">
-          <li><a href="#index-home">Home</a></li>
-          <li><a href="#index-about">About</a></li>
-          <li><a href="#index-services">Services</a></li>
-          <li><a href="#index-gallery">Gallery</a></li>
-          <li><a href="#index-contact">Contact Us</a></li>
-          <li><a href="#index-bookapp">Book an Appointment</a></li>
-          <li><a href="#index-autocareplus">AutoCare+</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#bookapp">Book an Appointment</a></li>
+          <li><a href="#autocareplus">AutoCare+</a></li>
         </ul>
       </nav>
-      <div class="text">
-        <div class="tagline">
-          <p>Quality service with pride.</p>
+        <div class="text">
+          <div class="tagline">
+            <p>Quality service with pride.</p>
+          </div>
+          <div class="button">
+            <button class="btnBooknow">Book now</button>
+          </div>
         </div>
-        <div class="button">
-          <button class="btnBooknow">Book now</button>
-        </div>
-      </div>
-    </div>
-    <div>
-
     </div>
     <!-- Additional content below to make it scrollable -->
-    <div class="container-login" id="2ndContainer">
-      <div class="left-bar">
-        
+    <div class="container" id="about">
 
-      <div class="image-bar">
+
+    </div>
+
+      {% comment %} <div class="image-bar">
         <img src="{% static 'images/automobilLogo.svg'%}" alt="" />
       </div>
       <div class="login-bar">
@@ -77,214 +75,215 @@
           </button>
         </div>
       </div>
-    </div>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-     
-      .navbar {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-     
-      .nav-links {
-        list-style: none;
-        display: flex;
-        gap:70px;
-        margin-right: 50px;
-        padding: 0;
-      }
-     
-      .tagline {
-        font-size: 24px;
-        color: white;
-        font-family: 'Inter', sans-serif;
-        font-weight: 700;
-        font-style: italic;
-        text-align: center;
-      }
+    </div> {% endcomment %}
 
-      .nav-links li a {
-        text-decoration: none;
-        color: white;
-        font-family: 'Inter', sans-serif;
-        font-weight: 300;
-        font-size: 16px;
-      }
-     
-      .nav-links li a:hover {
-        text-decoration: underline;
-      }
-     
-      .left-links {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-      }
-     
-      .left-links li a {
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-        font-weight: bold;
-        font-size: 16px;
-      }
-     
-      .left-links li a:hover {
-        text-decoration: underline;
-      }
-     
-      .image-section {
-        background-image: url("{% static 'images/backgroundMain.png' %}");
-        background-size: cover;
-        background-position: center;
-        height: 928px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-     
-      .text {
-        background-image: url("{% static 'images/automobilLogo.svg' %}");
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: top;
-        height: 500px;
-        width: 400px;
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-      }
-     
-      .under-svg-img {
-        width: 100%;
-        max-width: 300px;
-        height: auto;
-      }
-     
-      .container-login {
-        display: flex;
-        flex-direction: row;
-        padding: 0px;
-        height: 928px;
-        width: 100%;
-        background-color: #f8f9fa;
-        text-align: center;
-      }
-     
-      .extra-content h2 {
-        font-size: 24px;
-        color: #333;
-      }
-     
-      .extra-content p {
-        font-size: 16px;
-        color: #555;
-      }
-      .hover-link {
-        padding: 10px 15px;
-        border-radius: 14px;
-        transition: background-color 0.3s ease;
-      }
-     
-      .hover-link:hover {
-        background-color: #f0ad4e; /* Change to any hover color */
-      }
-     
-      .left-links li a {
-        text-decoration: none;
-        color: #000;
-        font-weight: bold;
-        font-size: 16px;
-      }
-      .left-bar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 30%;
-      }
-      .image-bar {
-        width: 30%;
-        height: 928px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .login-bar {
-        width: 40%;
-        height: 928px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-      .image-bar img {
-        width: 100%;
-        max-width: 700px; /* Default on large screens */
-        height: auto;
-        display: block;
-        margin: 0 auto;
-      }
-     
-      .btnBooknow {
-        width: 200px;
-        height: 50px;
-        background: none;
-        border-color: white;
-        border-width: 2px;
-        color: white;
-        font-size: 20px;
-        margin-bottom: 150px;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-     
-      .btnBooknow:hover {
-        background-color: rgba(126, 126, 126, 0.9);
-        color: #fffdfd;
-        border-color: #333;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        transform: scale(1.05);
-      }
-      /* Medium screens (tablets) */
-      @media (max-width: 992px) {
-        .image-bar img {
+      <style>
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+      
+        .navbar {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+        }
+      
+        .nav-links {
+          list-style: none;
+          display: flex;
+          gap:50px;
+          margin-right: 50px;
+          padding: 0;
+        }
+      
+        .tagline {
+          font-size: 24px;
+          color: white;
+          font-family: 'Inter', sans-serif;
+          font-weight: 700;
+          font-style: italic;
+          text-align: center;
+        }
+
+        .nav-links li a {
+          text-decoration: none;
+          color: white;
+          font-family: 'Inter', sans-serif;
+          font-weight: 300;
+          font-size: 16px;
+        }
+      
+        .nav-links li a:hover {
+          text-decoration: underline;
+        }
+      
+        .left-links {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          align-items: start;
+          margin: 0;
+          padding: 0;
+          width: 100%;
+        }
+      
+        .left-links li a {
+          text-decoration: none;
+          color: rgb(0, 0, 0);
+          font-weight: bold;
+          font-size: 16px;
+        }
+      
+        .left-links li a:hover {
+          text-decoration: underline;
+        }
+      
+        .image-section {
+          background-image: url("{% static 'images/backgroundMain.png' %}");
+          background-size: cover;
+          background-position: center;
+          height: 928px;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      
+        .text {
+          background-image: url("{% static 'images/automobilLogo.svg' %}");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: top;
+          height: 500px;
+          width: 400px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-end;
+        }
+      
+        .under-svg-img {
+          width: 100%;
           max-width: 300px;
+          height: auto;
         }
-      }
-     
-      /* Small screens (phones) */
-      @media (max-width: 768px) {
+      
+        .container {
+          display: flex;
+          flex-direction: row;
+          padding: 0px;
+          height: 928px;
+          width: 100%;
+          background-color: #f8f9fa;
+          text-align: center;
+        }
+      
+        .extra-content h2 {
+          font-size: 24px;
+          color: #333;
+        }
+      
+        .extra-content p {
+          font-size: 16px;
+          color: #555;
+        }
+        .hover-link {
+          padding: 10px 15px;
+          border-radius: 14px;
+          transition: background-color 0.3s ease;
+        }
+      
+        .hover-link:hover {
+          background-color: #f0ad4e; /* Change to any hover color */
+        }
+      
+        .left-links li a {
+          text-decoration: none;
+          color: #000;
+          font-weight: bold;
+          font-size: 16px;
+        }
+        .left-bar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 30%;
+        }
+        .image-bar {
+          width: 30%;
+          height: 928px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .login-bar {
+          width: 40%;
+          height: 928px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
         .image-bar img {
-          max-width: 200px;
+          width: 100%;
+          max-width: 700px; /* Default on large screens */
+          height: auto;
+          display: block;
+          margin: 0 auto;
         }
-      }
-     
-      /* Extra small screens */
-      @media (max-width: 480px) {
-        .image-bar img {
-          max-width: 150px;
+      
+        .btnBooknow {
+          width: 200px;
+          height: 50px;
+          background: none;
+          border-color: white;
+          border-width: 2px;
+          color: white;
+          font-size: 20px;
+          margin-bottom: 150px;
+          font-family: Arial, Helvetica, sans-serif;
         }
-      }
-      .button-group {
-        display: flex;
-        gap: 10px; /* spacing between the two buttons */
-      }
-      .button-group button {
-        width: 150px; /* fixed width for both buttons */
-      }
+      
+        .btnBooknow:hover {
+          background-color: rgba(126, 126, 126, 0.9);
+          color: #fffdfd;
+          border-color: #333;
+          transition: all 0.3s ease-in-out;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          transform: scale(1.05);
+        }
+        /* Medium screens (tablets) */
+        @media (max-width: 992px) {
+          .image-bar img {
+            max-width: 300px;
+          }
+        }
+      
+        /* Small screens (phones) */
+        @media (max-width: 768px) {
+          .image-bar img {
+            max-width: 200px;
+          }
+        }
+      
+        /* Extra small screens */
+        @media (max-width: 480px) {
+          .image-bar img {
+            max-width: 150px;
+          }
+        }
+        .button-group {
+          display: flex;
+          gap: 10px; /* spacing between the two buttons */
+        }
+        .button-group button {
+          width: 150px; /* fixed width for both buttons */
+        }
     </style>
   </body>
 </html>
