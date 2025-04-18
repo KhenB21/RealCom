@@ -16,57 +16,39 @@
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="stylesheet" href="/static/css/index.css"/>
   </head>
   <body>
     <!-- In your template -->
     <div class="image-section">
       <nav class="navbar">
         <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#2ndContainer">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#index-home">Home</a></li>
+          <li><a href="#index-about">About</a></li>
+          <li><a href="#index-services">Services</a></li>
+          <li><a href="#index-gallery">Gallery</a></li>
+          <li><a href="#index-contact">Contact Us</a></li>
+          <li><a href="#index-bookapp">Book an Appointment</a></li>
+          <li><a href="#index-autocareplus">AutoCare+</a></li>
         </ul>
       </nav>
       <div class="text">
-        <div class="tagline"></div>
+        <div class="tagline">
+          <p>Quality service with pride.</p>
+        </div>
         <div class="button">
           <button class="btnBooknow">Book now</button>
         </div>
       </div>
     </div>
+    <div>
 
+    </div>
     <!-- Additional content below to make it scrollable -->
     <div class="container-login" id="2ndContainer">
       <div class="left-bar">
-        <ul class="left-links">
-          <li>
-            <div class="hover-link"><a href="#home">Home</a></div>
-          </li>
-          <li>
-            <div class="hover-link"><a href="#about">About AutoSport</a></div>
-          </li>
-          <li>
-            <div class="hover-link"><a href="services">Services</a></div>
-          </li>
-          <li>
-            <div class="hover-link"><a href="#gallery">Gallery</a></div>
-          </li>
-          <li>
-            <div class="hover-link"><a href="#contact">Contact us</a></div>
-          </li>
-          <li>
-            <div class="hover-link"><a href="#autoCare">AutoCare +</a></div>
-          </li>
-          <li>
-            <div class="hover-link">
-              <a href="#book">Book and Appoinment</a>
-            </div>
-          </li>
-          <li>
-            <div class="hover-link"><a href="#service">Service Tracker</a></div>
-          </li>
-        </ul>
-      </div>
+        
 
       <div class="image-bar">
         <img src="{% static 'images/automobilLogo.svg'%}" alt="" />
@@ -96,7 +78,6 @@
         </div>
       </div>
     </div>
-
     <style>
       body {
         margin: 0;
@@ -105,32 +86,42 @@
       html {
         scroll-behavior: smooth;
       }
-
+     
       .navbar {
         position: absolute;
         top: 20px;
         right: 20px;
       }
-
+     
       .nav-links {
         list-style: none;
         display: flex;
-        gap: 80px;
+        gap:70px;
         margin-right: 50px;
         padding: 0;
+      }
+     
+      .tagline {
+        font-size: 24px;
+        color: white;
+        font-family: 'Inter', sans-serif;
+        font-weight: 700;
+        font-style: italic;
+        text-align: center;
       }
 
       .nav-links li a {
         text-decoration: none;
         color: white;
-        font-weight: bold;
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
         font-size: 16px;
       }
-
+     
       .nav-links li a:hover {
         text-decoration: underline;
       }
-
+     
       .left-links {
         list-style: none;
         display: flex;
@@ -140,18 +131,18 @@
         padding: 0;
         width: 100%;
       }
-
+     
       .left-links li a {
         text-decoration: none;
         color: rgb(0, 0, 0);
         font-weight: bold;
         font-size: 16px;
       }
-
+     
       .left-links li a:hover {
         text-decoration: underline;
       }
-
+     
       .image-section {
         background-image: url("{% static 'images/backgroundMain.png' %}");
         background-size: cover;
@@ -162,7 +153,7 @@
         justify-content: center;
         align-items: center;
       }
-
+     
       .text {
         background-image: url("{% static 'images/automobilLogo.svg' %}");
         background-size: contain;
@@ -176,13 +167,13 @@
         align-items: center;
         justify-content: flex-end;
       }
-
+     
       .under-svg-img {
         width: 100%;
         max-width: 300px;
         height: auto;
       }
-
+     
       .container-login {
         display: flex;
         flex-direction: row;
@@ -192,12 +183,12 @@
         background-color: #f8f9fa;
         text-align: center;
       }
-
+     
       .extra-content h2 {
         font-size: 24px;
         color: #333;
       }
-
+     
       .extra-content p {
         font-size: 16px;
         color: #555;
@@ -207,11 +198,11 @@
         border-radius: 14px;
         transition: background-color 0.3s ease;
       }
-
+     
       .hover-link:hover {
         background-color: #f0ad4e; /* Change to any hover color */
       }
-
+     
       .left-links li a {
         text-decoration: none;
         color: #000;
@@ -246,7 +237,7 @@
         display: block;
         margin: 0 auto;
       }
-
+     
       .btnBooknow {
         width: 200px;
         height: 50px;
@@ -258,7 +249,7 @@
         margin-bottom: 150px;
         font-family: Arial, Helvetica, sans-serif;
       }
-
+     
       .btnBooknow:hover {
         background-color: rgba(126, 126, 126, 0.9);
         color: #fffdfd;
@@ -273,14 +264,14 @@
           max-width: 300px;
         }
       }
-
+     
       /* Small screens (phones) */
       @media (max-width: 768px) {
         .image-bar img {
           max-width: 200px;
         }
       }
-
+     
       /* Extra small screens */
       @media (max-width: 480px) {
         .image-bar img {
