@@ -27,15 +27,16 @@
                     height: 120px;
                     margin-top: -10px;"/>
         <nav class="navbar">
-            <ul class="nav-links">
-                <li><a href="#">My Account</a></li>
-                <li><a href="#">My Appointments</a></li>
-                <li><a href="#">Book an Appointment</a></li>
-                <li><a href="#">Service Tracker</a></li>
-                <li><a href="#2ndContainer">Services</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                <li><a href="/">AutoMobil Sport</a></li>
-            </ul>
+            <div class="nav-links">
+                <button>My Account</button>
+                <button>My Appointments</button>
+                <button style="background-color: #31353B;
+                color: #f4f4f4;">Book an Appointment</button>
+                <button>Service Tracker</button>
+                <button>Services</button>
+                <button>Contact Us</button>
+                <button>AutoMobil Sport</button>
+            </div>
         </nav>
     </div>
 
@@ -305,7 +306,8 @@
                 font-family: 'Inter', sans-serif;
                 font-size: 12px;
                 color: #31353B;
-                width: 100%;">
+                width: 100%;
+                font-weight: bold;">
                 Cost Estimation
             </p>
             <div class="box" style="position: absolute;
@@ -415,26 +417,30 @@
     <style>
         .navbar {
         position: absolute;
-        top: 30px;
-        right: 20px;
+        top: -8px;
+        right: 0px;
       }
 
       .nav-links {
-        list-style: none;
         display: flex;
-        gap: 80px;
         margin-right: 50px;
         padding: 0;
       }
 
-      .nav-links li a {
-        text-decoration: none;
+      .nav-links button {
+        background-color: transparent;
+        width: 170px;
+        height: 60px;
         color: #31353B;
         font-size: 14px;
+        border: none;
+        outline: none;
       }
 
-      .nav-links li a:hover {
-        text-decoration: underline;
+      .nav-links button:hover {
+        background-color: #31353B;
+        color: #f4f4f4;
+        transition: background-color 0.3s ease;
       }
 
       .image-section {
