@@ -402,11 +402,11 @@
 
     <script>
     document.getElementById("submitButton").addEventListener("click", function(event) {
-        event.preventDefault(); // Prevent default behavior
+        event.preventDefault();
         if (confirm("Confirm Submission: Click 'OK' to proceed or 'Cancel' to abort.")) {
-        window.location.href = "http://127.0.0.1:8000/"; // Redirect to the specified URL
+        window.location.href = "http://127.0.0.1:8000/";
         } else {
-        alert("Submission cancelled!"); // Optional: Notify the user if canceled
+        alert("Submission cancelled!");
         }
     });
     </script>
