@@ -184,3 +184,86 @@ textarea.input-field {
     background-color: #DCE61E;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
+
+@media only screen and (max-width: 768px) {
+    .navBar {
+      flex-direction: column;
+      height: auto;
+      padding: 1rem;
+    }
+
+    .navLogo {
+      width: 8rem;
+      height: 8rem;
+      margin-left: 0;
+    }
+
+    .navLinks .navBtn {
+      width: auto;
+      font-size: 12px;
+    }
+
+    .box-for-the-box {
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .contactus-black-box {
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+    }
+
+    .cards-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .white-card {
+      width: 90%;
+      height: auto;
+      margin: 1rem 0;
+    }
+
+    .email-card, .phone-card, .address-card, .hours-card {
+      width: 100%;
+      padding: 10px;
+    }
+
+    .input-container {
+      width: 90%;
+    }
+
+    .submit-button {
+      width: 100%;
+    }
+
+    .corporation-text {
+      font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .contactus-black-box {
+      width: 80%;
+      margin: auto;
+    }
+
+    .white-card {
+      width: 400px;
+      margin: 20px;
+    }
+
+    .cards-container {
+      justify-content: space-evenly;
+    }
+
+    .navBar {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .navLinks .navBtn {
+      font-size: 16px;
+    }
+}
