@@ -11,8 +11,8 @@
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="..\static\css\myaccount.css" />
     <link rel="stylesheet" type="text/css" href="..\static\css\contact_us.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
@@ -35,84 +35,70 @@
     </div>
   </div>
 
-  <!-- Profile Card -->
-  <div class="black-box">
-    <div class="profile-card">
-      <div class="title-card">
-        <div class="d-flex justify-content-between">
-          <div>
-            <p class="fname">Justin Paul</p>
-            <p class="lname">Gonzales</p>
-          </div>
-          <p class="accID">Account ID: 0129385</p>
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="label">Email</div>
-        <div class="value">jpgonzales@gmail.com</div>
-      </div>
-
-      <div class="info-card">
-        <div class="label">Phone Number</div>
-        <div class="value">0912-345-789</div>
-      </div>
-
-      <div class="info-card">
-        <div class="label">Address</div>
-        <div class="value">ABC Avenue, Taguig City, Metro Manila</div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div class="info-card">
-            <div class="label">Car</div>
-            <div class="value">
-              McLaren 75LT<br>
-              Volkswagen T-Cross<br>
-              Lexus LC 500
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="info-card">
-            <div class="label">Plate Number</div>
-            <div class="value">
-              ABC 1234<br>
-              EFG 5678<br>
-              HIJ 9012
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <div class="add-car-btn">+ Add a car</div>
-        </div>
   
-        <div class="col">
-          <div class="info-card">
-            <div class="label">No. of transactions made</div>
-            <div class="value">2</div>
-          </div>
+    <!-- Contact Us Section -->
+    <div class="box-for-the-box">
+        <div class="contactus-black-box">
+            <div class="cards-container">
+                <div class="white-card">
+                    Contact Us
+                    <div class="email-card">
+                        <i class="fas fa-envelope email-icon"></i>
+                        <span class="card-text">info@email.com</span>
+                    </div>
+                    <div class="phone-card">
+                        <i class="fas fa-phone contacts-icon"></i>
+                        <span class="card-text">
+                            +639123456789<br>
+                            467-8809
+                        </span>
+                    </div>
+                    <div class="address-card">
+                        <i class="fa-solid fa-location-dot contacts-icon"></i>
+                        <span class="card-text">
+                            2287 Chino Roces Avenue<br>
+                            Makati city, 1231 Metro Manila,<br>
+                            Philippines<br>
+                        </span>
+                    </div>
+                    <div class="hours-card">
+                        <i class="fa-solid fa-clock contacts-icon"></i>
+                        <span class="card-text">
+                            8:00 AM to 6:00 PM
+                        </span>
+                    </div>                    
+                </div>
+                <div class="white-card">
+                    Get In Touch
+                    <form id="contact-form">
+                        <div class="input-container">
+                            <input type="email" id="email" class="input-field" placeholder="Your email address" required>
+                        </div>
+                        <div class="input-container">
+                            <textarea id="message" class="input-field" placeholder="Your message" required></textarea>
+                        </div>
+                        <div class="input-container">
+                            <button type="button" class="submit-button" onclick="sendEmail()">Submit</button>
+                        </div>
+                    </form>                    
+                </div>
+            </div>
+            <p class="corporation-text">AutoMobil Sport Corporation</p>
         </div>
-      </div>
     </div>
-  </div>
-
-  <!-- Chatbot -->
-  <div class="chat-bot">
-    <div class="row">
-      <div class="col-10">
-        <div class="chat-bot-text">
-          Welcome!<br>
-          For fast inquiries, I'm the man for the job!
-        </div>
-      </div>
-      <div class="col-1">
-        <img src="../static/images/chat-bot.svg" alt="chatbot">
-      </div>
-    </div>
-  </div>
 </html>
+
+<script>
+    function sendEmail() {
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const recipient = "lilicatch@duck.com"; // Fixed recipient email
+    
+        const subject = "Message from: " + email;
+        const body = encodeURIComponent(message);
+    
+        window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+    
+        document.getElementById("contact-form").reset();
+    }    
+</script>

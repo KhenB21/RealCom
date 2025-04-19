@@ -28,13 +28,18 @@ body {
 .navBtn {
   font-size: 14px;
   transition: background-color 0.3s, color 0.3s;
-}
-
-.navBtn:hover {
-  background-color: #31353B;
-  color: #F4F4F4;
   padding: 0.5rem 1rem;
   height: 5rem;
+  background-color: transparent;
+  color: #000; /* default color */
+  border: none;
+  cursor: pointer;
+}
+
+.navBtn:hover,
+.navBtn.active {
+  background-color: #31353B;
+  color: #F4F4F4;
 }
 
 .navBtn.highlight {

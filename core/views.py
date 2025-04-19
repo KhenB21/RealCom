@@ -10,3 +10,5 @@ def login (request):
     return render(request, 'login.html')
 def myaccount (request):
     return render(request, 'myaccount.html')
+def contact_us (request):
+    return render(request, 'contact_us.html')
