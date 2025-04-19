@@ -8,3 +8,5 @@ def register (request):
     return render(request, 'register.html')
 def login (request):
     return render(request, 'login.html')
+def service_tracker (request):
+    return render(request, 'serviceTracker.html')

@@ -7,4 +7,5 @@ urlpatterns = [
     path('services/', views.services, name='Services'),
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
+    path('service-tracker/', views.service_tracker, name='service-tracker'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

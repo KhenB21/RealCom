@@ -1,0 +1,233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Service Tracker</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body style="overflow: hidden;">
+
+    <div class="nav">
+        <img src="{% static 'images/5.svg'%}" alt="" 
+                style="position: absolute;
+                    width: 120px;
+                    height: 120px;
+                    margin-top: -10px;"/>
+        <nav class="navbar">
+            <div class="nav-links">
+                <button>My Account</button>
+                <button>My Appointments</button>
+                <button>Book an Appointment</button>
+                <button style="background-color: #31353B;
+                    color: #f4f4f4;">Service Tracker</button>
+                <button>Services</button>
+                <button>Contact Us</button>
+                <button>AutoMobil Sport</button>
+            </div>
+        </nav>
+    </div>
+
+    <div class="carsbtns" 
+        style="display: flex; 
+            flex-direction: column;
+            width: 10%;
+            margin-top: 10%;
+            margin-left: 5%;
+            gap: 5px;">
+        <button style="background-color: #DCE61E;">
+            <p style="font-size: 14px; font-weight: bold;">Lexus LC 500</p>
+            <p>Booking ID: 1234567890 03-01-2025</p>
+        </button>
+        <button>
+            <p style="font-size: 14px; font-weight: bold;">Volkswagen T-Cross</p>
+            <p>Booking ID: 9876543210 03-01-2025</p>
+        </button>
+    </div>
+
+    <div class="tabs" style="display: flex; 
+        flex-direction: row;
+        width: 100%;
+        margin-top: -17%;
+        margin-left: 17%;">
+        <button style="background-color: #d1d1d1; color: #31353B;">Pre-Service</button>
+        <button>In Service</button>
+        <button>Post-Service</button>
+        <button style="background-color: #DCE61E; color: #31353B;">My Car</button>
+    </div>
+
+    <div class="one" style="display: flex;
+        flex-direction: column;
+        background-color: #e7e7e7;
+        border-radius: 14px;
+        margin-left: 18%;
+        margin-top: 2%;
+        padding: 15px;
+        width: 23%;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+        gap: 5px;">
+        <div style="display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: #DCE61E;
+            border-radius: 14px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 1;
+            gap: 20px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 14px; 
+                display: flex; 
+                align-items: center;
+                font-weight: bold;">
+                <input type="checkbox" disabled style="margin-right: 8px;"> Car has Arrived at the facility
+            </p>
+            <p style="font-size: 12px;">03-01-2025</p>
+        </div>
+        <div style="display: flex;
+            flex-direction: column;
+            border-radius: 14px;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            /* width: 100%; */
+            gap: 5px;">
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #f4f4f4;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1;">Condition upon arrival</p>
+                <p style="font-size: 14px; line-height: 0;">no exterior deformity</p>
+                <p style="font-size: 14px; line-height: 0;">no interior deformity</p>
+            </div>
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #f4f4f4;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1;">Media</p>
+                <div style="display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 5px;">
+                    <img src="{% static 'images/spider.jpg'%}" alt="" 
+                        style="
+                            width: 84px;
+                            height: 150px;
+                            border-radius: 14px;"/>
+                    <img src="{% static 'images/OIP.jpg'%}" alt="" 
+                        style="
+                            width: 206px;
+                            height: 116px;
+                            border-radius: 14px;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .navbar {
+        position: absolute;
+        top: -8px;
+        right: 0px;
+      }
+
+      .nav-links {
+        display: flex;
+        margin-right: 50px;
+        padding: 0;
+      }
+
+      .nav-links button {
+        background-color: transparent;
+        width: 170px;
+        height: 60px;
+        color: #31353B;
+        font-size: 14px;
+        border: none;
+        outline: none;
+      }
+
+      .nav-links button:hover {
+        background-color: #31353B;
+        color: #f4f4f4;
+        transition: background-color 0.3s ease;
+      }
+
+      .carsbtns button {
+        border-radius: 14px;
+        border: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        padding-top: 15px;
+      }
+
+      .carsbtns button p {
+        font-size: 12px;
+      }
+
+      .tabs button {
+        border-radius: 14px;
+        border: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        background-color: #31353B;
+        width: 20%;
+        height: 30px;
+        font-size: 14px;
+        color: #f4f4f4;
+        font-weight: bold;
+      }
+
+      .tabs button:hover {
+        background-color: #d1d1d1;
+        color: #31353B;
+        transition: background-color 0.3s ease;
+      }
+
+      /* Medium screens (tablets) */
+      @media (max-width: 992px) {
+        .image-bar img {
+          max-width: 300px;
+        }
+      }
+
+      /* Small screens (phones) */
+      @media (max-width: 768px) {
+        .image-bar img {
+          max-width: 200px;
+        }
+      }
+
+      /* Extra small screens */
+      @media (max-width: 480px) {
+        .image-bar img {
+          max-width: 150px;
+        }
+      }
+    </style>
+
+  </body>
