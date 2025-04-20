@@ -2,7 +2,7 @@
 body {
   background-color: #f4f4f4;
   font-family: "Inter", sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 /* Navbar Styles */
@@ -12,6 +12,7 @@ body {
   background-color: #f4f4f4;
   padding: 0.5rem 1rem;
   margin-top: -0.5rem;
+  margin-bottom: 0rem;
 }
 
 .navLinks {
@@ -62,14 +63,10 @@ body {
 
 /* Main Content */
 .cont-box {
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
   border-radius: 14px;
   padding: 1rem 3rem;
-}
-
-/* Tab Controls */
-.tab-cont {
-  /* Flex container for tabs */
+  /* margin-top: -10rem; */
 }
 
 .tab-btn {
@@ -81,6 +78,12 @@ body {
   cursor: pointer;
   border-radius: 5px;
   color: #31353b;
+  width: 30rem;
+}
+
+.tab-btn:hover {
+  background-color: #31353b;
+  color: #f4f4f4;
 }
 
 .tab-btn.active {
@@ -95,6 +98,9 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 40rem;
+  margin: 0 1rem;
+  padding: 0 1.5rem;
+  height: 27rem;
 }
 
 .card-title {
@@ -116,11 +122,41 @@ body {
 }
 
 .title {
-    background-color: #f4f4f4;
-    border-radius: 14px;
-    height: 2.5rem;
-    padding: 10px;
-    padding-top: 5px;
+  background-color: #f4f4f4;
+  border-radius: 14px;
+  height: 2.5rem;
+  padding: 10px;
+  padding-top: 5px;
+}
+
+.date {
+  background-color: #f4f4f4;
+  border-radius: 14px;
+  height: 3.7rem;
+  padding: 10px 15px;
+}
+
+.services {
+  background-color: #f4f4f4;
+  border-radius: 14px;
+  height: 5.3rem;
+  padding: 10px 15px;
+}
+
+.price {
+  background-color: #268c4a;
+  border-radius: 14px;
+  height: 4rem;
+  text-align: center;
+  justify-content: center;
+  padding: 12px 0px;
+}
+
+.price p {
+  font-size: 25px;
+  font-weight: 900;
+  color: #f4f4f4;
+  letter-spacing: 1px;
 }
 
 .card-black-box .title.highlight {
@@ -131,7 +167,7 @@ body {
 .card-black-box .date {
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
-  color: #555;
+  color: #31353b;
 }
 
 .card-black-box .services p {
@@ -147,12 +183,31 @@ body {
 }
 
 /* Buttons inside cards */
+.btn-cont {
+  margin-top: 0.5rem;
+}
+
 .waitingBtn {
   border: none;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 14px;
+  width: 100%;
+}
+
+.action-buttons  {
+  margin-left: auto;
+  margin-right: auto;
+  width: 19rem;
+}
+
+.costBtn {
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: 14px;
 }
 
 /* Chatbot */
@@ -180,7 +235,6 @@ body {
   margin-top: -10px;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 576px) {
   .navBtn {
     font-size: 12px;
