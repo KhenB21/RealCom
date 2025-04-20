@@ -9,4 +9,5 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('my-account/', views.myaccount, name='myaccount'),
     path('contact-us/', views.contact_us, name='contact_us'),
+    path('about-us/', views.about_us, name='about_us'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
