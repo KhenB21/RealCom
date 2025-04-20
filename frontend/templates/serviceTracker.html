@@ -20,14 +20,15 @@
 
   <body style="overflow: hidden;">
 
-    <div class="nav">
-        <img src="{% static 'images/5.svg'%}" alt="" 
-                style="position: absolute;
-                    width: 120px;
-                    height: 120px;
-                    margin-top: -10px;"/>
-        <nav class="navbar">
-            <div class="nav-links">
+    <div class="nav" style="display: flex; flex-direction: row;">
+      <img src="{% static 'images/5.svg'%}" alt="" 
+        style="position: absolute;
+            margin-left: auto;
+            width: 120px;
+            height: 120px;
+            margin-top: -10px;"/>
+        <nav class="navbar" style="display: flex; flex-direction: row;">
+            <div class="nav-links" style="display: flex; flex-direction: row;">
                 <button>My Account</button>
                 <button>My Appointments</button>
                 <button>Book an Appointment</button>
@@ -62,92 +63,703 @@
         width: 100%;
         margin-top: -17%;
         margin-left: 17%;">
-        <button style="background-color: #d1d1d1; color: #31353B;">Pre-Service</button>
-        <button>In Service</button>
-        <button>Post-Service</button>
-        <button style="background-color: #DCE61E; color: #31353B;">My Car</button>
+        <button onclick="preServ()" id="pre-servicebtn">Pre-Service</button>
+        <button onclick="inServ()" id="in-servicebtn">In Service</button>
+        <button onclick="postServ()" id="post-servicebtn">Post-Service</button>
+        <button onclick="myCar()" id="my-carbtn">My Car</button>
     </div>
 
-    <div class="one" style="display: flex;
-        flex-direction: column;
-        background-color: #e7e7e7;
-        border-radius: 14px;
-        margin-left: 18%;
-        margin-top: 2%;
-        padding: 15px;
-        width: 23%;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-        gap: 5px;">
-        <div style="display: flex;
-            flex-direction: row;
-            justify-content: center;
-            background-color: #DCE61E;
-            border-radius: 14px;
-            padding-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-            line-height: 1;
-            gap: 20px;
-            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
-            <p style="font-size: 14px; 
-                display: flex; 
+
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- --------------------------------------------------------------------------PRE-SERVICE -->
+    <!-- ------------------------------------------------------------------------------------- -->
+
+    <div id="container1" style=" 
+      flex-direction: row;
+      gap: 2%;
+      margin-top: 3%;
+      margin-left: 16.5%;
+      width: 100%;">
+
+      <div class="one" style="display: flex;
+          flex-direction: column;
+          background-color: #e7e7e7;
+          border-radius: 14px;
+          padding: 15px;
+          width: 27%;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          gap: 5px;">
+          <div style="display: flex;
+              flex-direction: row;
+              justify-content: center;
+              background-color: #DCE61E;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
+              line-height: 1;
+              gap: 20px;
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+              <p style="font-size: 14px; 
+                  display: flex; 
+                  align-items: center;
+                  font-weight: bold;">
+                  <input type="checkbox" disabled style="margin-right: 8px;"> Car has Arrived at the facility
+              </p>
+              <p style="font-size: 12px;">03-01-2025</p>
+          </div>
+          <div style="display: flex;
+              flex-direction: column;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
+              /* width: 100%; */
+              gap: 5px;">
+              <div style="display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  background-color: #f4f4f4;
+                  border-radius: 14px;
+                  padding-top: 10px;
+                  padding-left: 15px;
+                  padding-right: 15px;
+                  padding-bottom: 5px;
+                  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                  <p style="font-size: 12px; line-height: 1;">Condition upon arrival</p>
+                  <p style="font-size: 14px; line-height: 0;">no exterior deformity</p>
+                  <p style="font-size: 14px; line-height: 0;">no interior deformity</p>
+              </div>
+              <div style="display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  background-color: #f4f4f4;
+                  border-radius: 14px;
+                  padding-top: 10px;
+                  padding-left: 15px;
+                  padding-right: 15px;
+                  padding-bottom: 5px;
+                  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                  <p style="font-size: 12px; line-height: 1;">Media</p>
+                  <div style="display: flex;
+                      flex-direction: row;
+                      justify-content: center;
+                      gap: 5px;">
+                      <img src="{% static 'images/spider.jpg'%}" alt="" 
+                          style="
+                              width: 84px;
+                              height: 150px;
+                              border-radius: 14px;"/>
+                      <img src="{% static 'images/OIP.jpg'%}" alt="" 
+                          style="
+                              width: 206px;
+                              height: 116px;
+                              border-radius: 14px;"/>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="two" style="display: flex;
+          flex-direction: column;
+          border-radius: 14px;
+          width: 27%;
+          gap: 10px;">
+          <div style="display: flex;
+              flex-direction: column;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-bottom: 10px;
+              height: auto;
+              gap: 5px;
+              background-color: #e7e7e7;">
+              <div style="display: flex;
+                  flex-direction: column;
+                  background-color: #f4f4f4;
+                  border-radius: 14px;
+                  padding-top: 10px;
+                  padding-left: 15px;
+                  padding-right: 15px;
+                  padding-bottom: 5px;
+                  height: auto;
+                  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                  <p style="font-size: 12px; line-height: 1;">Services</p>
+                  <p style="font-size: 14px; line-height: 0; height: auto;">Repaint</p>
+              </div>
+          </div>
+          <div style="display: flex;
+              flex-direction: column;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 10px;
+              padding-right: 10px;
+              padding-bottom: 10px;
+              height: auto;
+              gap: 5px;
+              background-color: #e7e7e7;">
+              <div style="display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  background-color: #f4f4f4;
+                  border-radius: 14px;
+                  padding-top: 10px;
+                  padding-left: 15px;
+                  padding-right: 15px;
+                  padding-bottom: 5px;
+                  height: auto;
+                  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                  <p style="font-size: 12px; line-height: 1;">List of items left inside the vehicle</p>
+                  <p style="font-size: 14px; line-height: 0;">water bottle</p>
+                  <p style="font-size: 14px; line-height: 0;">cologne</p>
+                  <p style="font-size: 14px; line-height: 0;">pen</p>
+                  <p style="font-size: 14px; line-height: 0; height: auto;">notebook</p>
+              </div>
+          </div>    
+          
+      </div>
+
+      <div class="three" style="display: flex;
+          flex-direction: column;
+          width: 20%;
+          gap: 5px;">
+      
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #ffffff;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1;">Findings</p>
+                <p style="font-size: 14px; line-height: 0;">blue painted car</p>
+            </div>
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
                 align-items: center;
-                font-weight: bold;">
-                <input type="checkbox" disabled style="margin-right: 8px;"> Car has Arrived at the facility
-            </p>
-            <p style="font-size: 12px;">03-01-2025</p>
-        </div>
-        <div style="display: flex;
+                text-align: center;
+                background-color: #ffffff;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 10px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1; font-weight: bold;">New Cost Estimation</p>
+                <p style="font-size: 14px; 
+                  line-height: 1;
+                  font-weight: bold;">
+                  30, 000.00</p>
+                <p style="font-size: 12px; 
+                  line-height: 1;
+                  color: #E74C3C;
+                  font-style: italic;">
+                  This is only an ESTIMATION of cost. Additional charges may apply.</p>
+                <p style="font-size: 12px; 
+                  line-height: 1;
+                  font-style: italic;">
+                Please approve the new cost estimation to continue the transaction.</p>
+                <button id="approve" 
+                  style="width: 200px;
+                  height: 30px;
+                  border-radius: 14px;
+                  font-size: 14px;
+                  font-weight: bold;
+                  border: 1px solid #2ECC71;">
+                  Approve Cost</button>
+                <button class="cancel" 
+                  style="width: 200px;
+                  height: 30px;
+                  border-radius: 14px;
+                  font-size: 14px;
+                  font-weight: bold;
+                  border: 1px solid #E74C3C;
+                  margin-top: 5px;">
+                  Cancel Transaction</button>
+            </div>
+      </div>
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------------------------------IN-SERVICE -->
+    <!-- ------------------------------------------------------------------------------------- -->
+
+    <div id="container2" style="display: none; 
+      flex-direction: row; 
+      gap: 2%;
+      margin-top: 3%;
+      margin-left: 16.5%;
+      width: 100%;">
+      <div style="display: flex; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 27%;
+        height: auto;
+        background-color: #e7e7e7;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 14px;
+        gap: 5px;
+        padding: 10px;">
+        <div style="display: flex; 
+          flex-direction: row;
+          gap: 5px;">
+          <div style="display: flex; 
             flex-direction: column;
+            width: 100%;
+            padding: 10px;
             border-radius: 14px;
-            padding-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-            /* width: 100%; */
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 12px; 
+              width: 265px;
+              line-height: 1;">Service</p>
+            <p style="font-size: 14px; line-height: 0;">Repaint</p>
+          </div>
+          <div style="display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            padding: 10px;
+            border-radius: 14px;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 14px; font-weight: bold;">Bay 7</p>
+          </div>
+        </div>
+        <div style="display: flex; 
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+            border-radius: 14px;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 12px; line-height: 1;">Technicians</p>
+          <p style="font-size: 14px; line-height: 0;">Vincent Van Gogh</p>
+          <p style="font-size: 14px; line-height: 1;">William Shakspeare</p>
+        </div>
+        <div style="display: flex; 
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+            border-radius: 14px;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 12px; line-height: 1;">Objective</p>
+          <p style="font-size: 14px; line-height: 0;">Repaint car with red paint.</p>
+        </div>
+        <div style="display: flex; 
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+            border-radius: 14px;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 12px; line-height: 1;">Tasks</p>
+          <div style="display: flex; 
+            flex-direction: row;">
+            <p style="font-size: 14px; line-height: 1;">Clean car</p>
+            <p style="font-size: 14px; line-height: 1; margin-left: auto;">03-01-2025</p>
+          </div>
+          <div style="display: flex; 
+            flex-direction: row;">
+            <p style="font-size: 14px; line-height: 0;">Paint</p>
+            <p style="font-size: 14px; line-height: 0; margin-left: auto;">03-01-2025</p>
+          </div>
+          <div style="display: flex; 
+            flex-direction: row;">
+            <p style="font-size: 14px; 
+              line-height: 1;
+              color: #2ECC71;">Polish</p>
+            <p style="font-size: 14px; 
+              line-height: 1; 
+              margin-left: auto;
+              color: #2ECC71;">in progress</p>
+          </div>
+        </div>
+        <div style="display: flex; 
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+            border-radius: 14px;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 12px; line-height: 1;">Schedule</p>
+          <p style="font-size: 14px; line-height: 1;">03-01-2025</p>
+          <p style="font-size: 14px; line-height: 0;">1:00 PM - 4:00 PM</p>
+        </div>
+        <div style="display: flex; 
+            flex-direction: column;
+            width: 100%;
+            padding: 10px;
+            border-radius: 14px;
+            background-color: #ffffff;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 12px; line-height: 1;">Note from the technician</p>
+          <p style="font-size: 14px; line-height: 0;">...</p>
+        </div>
+      </div>
+
+      <div style="
+        width: 23%;
+        gap: 5px;">
+      </div>
+
+      <div class="three" style="display: flex;
+          flex-direction: column;
+          width: 20%;
+          gap: 5px;">
+      
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #ffffff;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1;">Findings</p>
+                <p style="font-size: 14px; line-height: 0;">blue painted car</p>
+            </div>
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                background-color: #ffffff;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 10px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1; font-weight: bold;">New Cost Estimation</p>
+                <p style="font-size: 14px; 
+                  line-height: 1;
+                  font-weight: bold;">
+                  30, 000.00</p>
+                  <p style="font-size: 12px; 
+                  line-height: 1;
+                  font-style: italic;
+                  color: #2ECC71;">
+                NEW ESTIMATION APPROVED!</p>
+                <p style="font-size: 12px; 
+                  line-height: 1;
+                  color: #E74C3C;
+                  font-style: italic;">
+                  This is only an ESTIMATION of cost. Additional charges may apply.</p>
+            </div>
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #ffffff;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1;">Down payment</p>
+                <p style="font-size: 14px; line-height: 0; font-weight: bold;">15, 000.00</p>
+            </div>
+      </div>
+
+    </div>
+
+
+    <!-- ------------------------------------------------------------------------------------- -->
+    <!-- ---------------------------------------------------------------------------POST-SERVICE -->
+    <!-- ------------------------------------------------------------------------------------- -->
+
+    <div id="container3" style="display: none;
+      flex-direction: row;
+      width: 100%;
+      height: auto;
+      padding: 15px;
+      gap: 5%;
+      margin-top: 3%;
+      margin-left: 16.5%;
+      background-color: #e7e7e7;
+      border-radius: 14px;">
+
+        <div style="display: flex;
+          flex-direction: column;
+          gap: 5px;">
+        
+          <div style="display: flex;
+              flex-direction: column;
+              justify-content: center;
+              background-color: #ffffff;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-bottom: 5px;
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+              <p style="font-size: 12px; line-height: 1;">Findings</p>
+              <p style="font-size: 14px; line-height: 0;">blue painted car</p>
+          </div>
+          <div style="display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              background-color: #ffffff;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-bottom: 10px;
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+              <p style="font-size: 12px; line-height: 1; font-weight: bold;">New Cost Estimation</p>
+              <p style="font-size: 14px; 
+                line-height: 1;
+                font-weight: bold;">
+                30, 000.00</p>
+                <p style="font-size: 12px; 
+                line-height: 1;
+                font-style: italic;
+                color: #2ECC71;">
+              NEW ESTIMATION APPROVED!</p>
+              <p style="font-size: 12px; 
+                line-height: 0;
+                color: #E74C3C;
+                font-style: italic;">
+                This is only an ESTIMATION of cost. Additional charges may apply.</p>
+          </div>
+          <div style="display: flex;
+              flex-direction: column;
+              justify-content: center;
+              background-color: #ffffff;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-bottom: 5px;
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+              <p style="font-size: 12px; line-height: 1;">Down payment</p>
+              <p style="font-size: 14px; line-height: 0; font-weight: bold;">15, 000.00</p>
+          </div>
+          <div style="display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              background-color: #ffffff;
+              border-radius: 14px;
+              padding-top: 10px;
+              padding-left: 15px;
+              padding-right: 15px;
+              padding-bottom: 10px;
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+              <p style="font-size: 12px; line-height: 1;">Final Bill</p>
+              <p style="font-size: 14px; line-height: 0; font-weight: bold;">30, 000.00</p>
+              <button id="full-bill" 
+                    style="width: 200px;
+                    height: 30px;
+                    border-radius: 14px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    border: 1px solid #2ECC71;">
+                    View Full Bill</button>
+            </div>
+          </div>
+
+          <div style="display: none;
+            flex-direction: column;
             gap: 5px;">
             <div style="display: flex;
                 flex-direction: column;
                 justify-content: center;
-                background-color: #f4f4f4;
+                background-color: #ffffff;
                 border-radius: 14px;
                 padding-top: 10px;
                 padding-left: 15px;
                 padding-right: 15px;
                 padding-bottom: 5px;
                 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
-                <p style="font-size: 12px; line-height: 1;">Condition upon arrival</p>
-                <p style="font-size: 14px; line-height: 0;">no exterior deformity</p>
-                <p style="font-size: 14px; line-height: 0;">no interior deformity</p>
+                <p style="font-size: 12px; line-height: 1;">Services</p>
+                <p style="font-size: 14px; line-height: 0;">Repaint</p>
             </div>
             <div style="display: flex;
                 flex-direction: column;
                 justify-content: center;
-                background-color: #f4f4f4;
+                background-color: #ffffff;
                 border-radius: 14px;
                 padding-top: 10px;
                 padding-left: 15px;
                 padding-right: 15px;
                 padding-bottom: 5px;
                 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
-                <p style="font-size: 12px; line-height: 1;">Media</p>
-                <div style="display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    gap: 5px;">
-                    <img src="{% static 'images/spider.jpg'%}" alt="" 
-                        style="
-                            width: 84px;
-                            height: 150px;
-                            border-radius: 14px;"/>
-                    <img src="{% static 'images/OIP.jpg'%}" alt="" 
-                        style="
-                            width: 206px;
-                            height: 116px;
-                            border-radius: 14px;"/>
+                <p style="font-size: 12px; line-height: 1;">Final Inspection</p>
+                <p style="font-size: 14px; line-height: 0;">Road Test</p>
+                <p style="font-size: 14px; line-height: 1;">Quality Control</p>
+            </div>
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #ffffff;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1;">Results</p>
+                <p style="font-size: 14px; line-height: 0;">Successfully repainted car ith red paint.</p>
+                <p style="font-size: 14px; line-height: 1;">Polished and ready.</p>
+                <p style="font-size: 14px; line-height: 0;">No exterior deformity</p>
+            </div>
+              <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100;
+                padding: 10px;
+                border-radius: 14px;
+                background-color: #ffffff;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 14px; font-weight: bold;">Waiting for full payment...</p>
+              </div>
+              <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 10px;
+                border-radius: 14px;
+                background-color: #ffffff;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 14px; font-weight: bold;">Thank you for trusting AutoMobil Sport!</p>
+              </div>
+          </div>
+
+          <div style="display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 300px;">
+            <div style="display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #ffffff;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-bottom: 5px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                <p style="font-size: 12px; line-height: 1;">Transaction Period</p>
+                <div style="display: flex; flex-direction: row;">
+                  <p style="font-size: 14px; line-height: 0;">Start: 03-01-2025</p>
+                  <p style="font-size: 14px; line-height: 0; margin-left: auto;">1:00 PM</p>
+                </div>
+                <div style="display: flex; flex-direction: row;">
+                  <p style="font-size: 14px; line-height: 1;">End: 03-01-2025</p>
+                  <p style="font-size: 14px; line-height: 1; margin-left: auto;">4:00 PM</p>
                 </div>
             </div>
+          </div>
+        
+
+  <!-- ------------------------------------------------------------------------------------- -->
+  <!-- ---------------------------------------------------------------------------MY-CAR -->
+  <!-- ------------------------------------------------------------------------------------- -->
+
+  <div id="container4" style="display: none; 
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    /* gap: 5%; */
+    margin-top: 3%;
+    margin-left: 3%;
+    background-color: #e7e7e7;
+    border-radius: 14px;">
+    <div style="display: flex; 
+      flex-direction: row;">
+      <div style="display: flex; 
+        flex-direction: column;">
+        <p>Bay 7</p>
+      </div>
+      <div style="display: flex; 
+        flex-direction: column;">
+        <div style="display: flex; 
+          flex-direction: row;">
+          <p>Service</p>
+          <p>Repaint</p>
         </div>
+        <div style="display: flex; 
+          flex-direction: row;">
+          <p>2:12:34</p>
+        </div>
+      </div>
+      <div style="display: flex; 
+        flex-direction: column;">
+        <p>camera 3</p>
+      </div>
+      <div style="display: flex; 
+        flex-direction: column;">
+        <img src="{% static 'images/redcar.jpg'%}" alt="" 
+                />
+      </div>
     </div>
+  </div>
+
+
+
+    <script>
+      document.getElementById("approve").addEventListener("click", function(event) {
+          confirm("Please make a downpayment to start the service, thank you.")
+      });
+
+      function showContainer(containerId, activeButtonId) {
+          const containers = ["container1", "container2", "container3", "container4"];
+          containers.forEach(id => {
+              const container = document.getElementById(id);
+              if (container) {
+                  container.style.display = id === containerId ? "flex" : "none";
+              }
+          });
+
+          const buttons = ["pre-servicebtn", "in-servicebtn", "post-servicebtn", "my-carbtn"];
+          buttons.forEach(id => {
+              const btn = document.getElementById(id);
+              if (btn) {
+                  if (id === activeButtonId) {
+                      btn.style.color = id === "my-carbtn" ? "#31353B" : "#31353B";
+                      btn.style.backgroundColor = id === "my-carbtn" ? "#DCE61E" : "#f4f4f4";
+                  } else {
+                      btn.style.color = id === "my-carbtn" ? "#f4f4f4" : "#f4f4f4";
+                      btn.style.backgroundColor = id === "my-carbtn" ? "#31353B" : "#31353B";
+                  }
+              }
+          });
+      }
+
+
+      function preServ() {
+          showContainer("container1", "pre-servicebtn");
+      }
+
+      function inServ() {
+          showContainer("container2", "in-servicebtn");
+      }
+
+      function postServ() {
+          showContainer("container3", "post-servicebtn");
+      }
+
+      function myCar() {
+          showContainer("container4", "my-carbtn");
+      }
+    </script>
 
 
     <style>
@@ -159,18 +771,20 @@
 
       .nav-links {
         display: flex;
+        flex-direction: row;
         margin-right: 50px;
-        padding: 0;
       }
 
       .nav-links button {
         background-color: transparent;
-        width: 170px;
+        width: auto;
         height: 60px;
         color: #31353B;
         font-size: 14px;
         border: none;
         outline: none;
+        padding-left: 20px;
+        padding-right: 20px; 
       }
 
       .nav-links button:hover {
@@ -190,7 +804,25 @@
         font-size: 12px;
       }
 
-      .tabs button {
+      .carsbtns button:hover {
+        background-color: #d1d1d1;
+        color: #31353B;
+        transition: background-color 0.3s ease;
+      }
+
+      #pre-servicebtn {
+        color: #31353B;
+        background-color: #f4f4f4;
+        border-radius: 14px;
+        border: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        width: 20%;
+        height: 30px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      #in-servicebtn, #post-servicebtn {
         border-radius: 14px;
         border: none;
         box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -202,9 +834,47 @@
         font-weight: bold;
       }
 
-      .tabs button:hover {
-        background-color: #d1d1d1;
+      #my-carbtn {
+        border-radius: 14px;
+        border: none;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        background-color: #DCE61E;
         color: #31353B;
+        width: 20%;
+        height: 30px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .tabs button:hover {
+        background-color: #f4f4f4;
+        color: #31353B;
+        transition: background-color 0.3s ease;
+      }
+
+      #container1 {
+        display: flex;
+      }
+
+      #approve, #full-bill {
+        color: #2ECC71;
+        background-color: #ffffff;
+      }
+
+      #approve:hover, #full-bill:hover {
+        background-color: #2ECC71;
+        color: #ffffff;
+        transition: background-color 0.3s ease;
+      }
+
+      .cancel {
+        color: #E74C3C;
+        background-color: #ffffff;
+      }
+
+      .cancel:hover {
+        background-color: #E74C3C;
+        color: #ffffff;
         transition: background-color 0.3s ease;
       }
 
