@@ -10,24 +10,33 @@ body {
 .navBar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; Distributes items */
   background-color: #F4F4F4;
-  margin-top: 0;
-  height: 4rem;
-  padding-right: 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: -.5rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: right;
+  width: 100%;
 }
 
 .navLinks .navBtn {
   background: none;
   border: none;
-  margin: 0 0.5rem;
   color: #31353B;
   font-weight: 400;
-  width: 10rem
+  height: 4rem;
 }
 
 .navBtn {
   font-size: 14px;
+  padding: 0.5rem;
+  width: auto;
+  min-width: 6rem;
+  width: 10rem;
 }
 
 .navBtn.active {
@@ -41,20 +50,26 @@ body {
   color: #268C4A;
 }
 
+.navBtn:hover {
+  background-color: #31353b;
+  color: #F4F4F4;
+}
+
 .navLogo {
-  width: 12rem;
-  height: 12rem;
+  max-width: 12rem;
   margin-left: -2rem;
+  margin-right: 8rem;
+  margin-top: -4rem;
 }
 
 .black-box {
   background-color: #31353B;
-  padding: 1rem;
+  padding: 2%;
   display: flex;
   justify-content: center;
-  margin: 1rem 0rem; 
   border-radius: 14px;
   height: 40rem;
+  margin-top: -3rem;
 }
 
 .profile-card {
@@ -104,7 +119,7 @@ body {
 .info-card {
   margin-bottom: .5rem;
   background-color: #ffffff;
-  border-radius: 14px;
+  border-radius: 14px; 
 }
 
 .label {
@@ -117,6 +132,10 @@ body {
   color: #31353B;
 }
 
+.info-card {
+  padding-right: 1rem;
+}
+
 .info-card .value {
   background: #ffffff;
   border-radius: 8px;
@@ -124,10 +143,12 @@ body {
   padding-top: 0.2rem;
 }
 
-.edit-icon {
-  width: 20px;
+.editBtn {
+  width: 30px;
   float: right;
-  margin-top: -30px;
+  margin-top: -35px;
+  background: none;
+  border: none;
 }
 
 .add-car-btn {
@@ -140,6 +161,11 @@ body {
   font-size: 0.9rem;
   cursor: pointer;
   background-color: #ffffff;
+}
+
+.add-car-btn:hover {
+  background-color: #268C4A;
+  color: #f4f4f4;
 }
 
 .chat-bot {
@@ -162,6 +188,48 @@ body {
 
 .chat-bot img {
   width: 5rem;
+  /* height: 5rem; */
   margin-left: -2rem;
   margin-top: -10px;
+} 
+
+@media (max-width: 576px) {
+
+  .navBtn {
+    font-size: 12px;
+    padding: 0.4rem;
+  }
+
+  .navLogo {
+    max-width: 10rem;
+  }
+
+  .navLinks {
+    flex-wrap: wrap;
+  }
+  
+  .navBar {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .profile-card {
+      width: 90%;
+  }
+
+  .black-box {
+    margin: 1rem 0rem;
+    padding: 10px;
+  }
+  .navBtn {
+    font-size: 12px;
+  }
+
+  .label {
+    font-size: 9px;
+  }
+
+  .value {
+    font-size: 7px;
+  }
 }

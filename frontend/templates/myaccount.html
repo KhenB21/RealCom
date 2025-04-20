@@ -22,15 +22,37 @@
 
     <!-- Navbar -->
   <div class="navBar">
-    <img src="../static/images/autocarelogo.svg" alt="AutoCare+ logo" class="navLogo" height="40"/>
-    <div class="navLinks d-flex">
-      <button class="navBtn active">My Account</button>
-      <button class="navBtn">My <p class="d-inline">Appointments</p></button>
-      <button class="navBtn">Book <p class="d-inline"> <br/>an Appointment</p></button>
-      <button class="navBtn">Service Tracker</button>
-      <button class="navBtn">Services</button>
-      <button class="navBtn">Contact Us</button>
-      <button class="navBtn highlight">AutoMobil Sport</button>
+    <div class="row">
+      <div class="col-2">
+        <img src="../static/images/autocarelogo.svg" alt="AutoCare+ logo" class="navLogo img-fluid" height="40"/>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="navLinks d-flex flex-wrap justify-content-center">
+            <div class="col">
+              <button class="navBtn active">My Account</button>
+            </div>
+            <div class="col">
+              <button class="navBtn">My <p class="d-inline">Appointments</p></button>
+            </div>
+            <div class="col">
+              <button class="navBtn">Book <p class="d-inline"> <br/>an Appointment</p></button>
+            </div>
+            <div class="col">
+              <button class="navBtn">Service Tracker</button>
+            </div>
+            <div class="col">
+              <button class="navBtn">Services</button>
+            </div>
+            <div class="col">
+              <button class="navBtn">Contact Us</button>
+            </div>
+            <div class="col">
+              <button class="navBtn highlight">AutoMobil Sport</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -50,16 +72,24 @@
       <div class="info-card">
         <div class="label">Email</div>
         <div class="value">jpgonzales@gmail.com</div>
+        <button class="editBtn">
+          <img src="../static/images/edit.png" alt="edit" class="img-fluid" height="40"/>
+        </button>
       </div>
 
       <div class="info-card">
         <div class="label">Phone Number</div>
         <div class="value">0912-345-789</div>
-      </div>
+        <button class="editBtn">
+          <img src="../static/images/edit.png" alt="edit" class="img-fluid" height="40"/>
+        </button>      </div>
 
       <div class="info-card">
         <div class="label">Address</div>
         <div class="value">ABC Avenue, Taguig City, Metro Manila</div>
+        <button class="editBtn">
+          <img src="../static/images/edit.png" alt="edit" class="img-fluid" height="40"/>
+        </button>
       </div>
 
       <div class="row">
@@ -104,10 +134,10 @@
   <div class="chat-bot">
     <div class="row">
       <div class="col-10">
-        <div class="chat-bot-text">
+        <p class="chat-bot-text">
           Welcome!<br>
           For fast inquiries, I'm the man for the job!
-        </div>
+        </p>
       </div>
       <div class="col-1">
         <img src="../static/images/chat-bot.svg" alt="chatbot">
