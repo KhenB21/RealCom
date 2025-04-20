@@ -6,5 +6,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('services/', views.services, name='Services'),
     path('register/', views.register, name='register'),
-    path('login/', views.login, name='login'),
+    path('my-appointment-ongoing/', views.ongoing, name='ongoing'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

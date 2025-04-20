@@ -8,3 +8,5 @@ def register (request):
     return render(request, 'register.html')
 def login (request):
     return render(request, 'login.html')
+def ongoing (request):
+    return render(request, 'myappointment1.html')
