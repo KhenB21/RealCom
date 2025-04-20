@@ -51,128 +51,139 @@ html, body {
   margin-left: -2rem;
 }
 
-.hero-container,
-.content-container-1,
-.content-container-2 {
-  width: 100%;
-  height: 100vh;
-  scroll-snap-align: start;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.hero-container {
-  position: relative;
-  overflow-y: auto;
-}
-
-.image-overlay {
-  height: 100vh;
-  width: 100%;
-  position: relative;
-  overflow-y: auto;
-}
-
-.image-overlay img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.image-overlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-.overlay-text {
-  position: absolute;
-  bottom: 2rem;
-  left: 7rem;
-  color: white;
-  font: bold 2rem sans-serif;
-  font-size: 60px;
-  z-index: 2;
-}
-
-.overlay-text .pride-text {
-  color: #C5E856;
-}
-
-.left-content-1{
-    width: 37%;
-    margin-top: 12rem;
+.content-container{
+    width: 100%;
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .image-overlay {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-y: auto;
+  }
+  
+  .image-overlay img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .image-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    bottom: 2rem;
+    left: 7rem;
+    color: white;
+    font: bold 2rem sans-serif;
+    font-size: 60px;
+    z-index: 2;
+  }
+  
+  .overlay-text .pride-text {
+    color: #C5E856;
+  }
+  
+  .left-content{
     font-weight: 600;
     color: #31353B;
+  }
+  
+  .left-content-1{
+    width: 37%;
+    margin-top: 12rem;
     font-size: 20px;
     line-height: 35px;
-}
-
-.right-content-1{
+  }
+  
+  .left-content-2, .left-content-3{
+    width: 40%;
+    margin-top: 17rem;
+    font-size: 20px;
+    line-height: 30px;
+  }
+  
+  .left-content-3 {
+    margin-left: 7rem;
+  }
+  
+  .left-content table {
+    border-collapse: collapse;
+    width: 85%;
+  }
+  
+  .left-content td {
+    padding: 0;
+    margin: 0;
+  }
+  
+  .title {
+    text-align: right;
+    width: 30%;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 40px;
+  }
+  
+  .divider {
+    font-size: 20px;
+    height: 100%;
+    text-align: center;
+  }
+  
+  .description {
+    text-align: left;
+    width: 50%;
+    vertical-align: top;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  
+  .right-content{
+    font-weight: 400;
+    color: #31353B;
+  }
+  
+  .right-content-1{
     width: 37%;
     text-align: left;
     margin-top: 19rem;
-    font-weight: 400;
-    color: #31353B;
     font-size: 16px;
     line-height: 25px;
-}
-
-.left-content-2 {
-    width: 40%;
-    margin-top: 15rem;
-    font-weight: 600;
-    color: #31353B;
-    font-size: 20px;
-    line-height: 30px;
-}
-
-.right-content-2 {
-    width: 40%;
-    text-align: left;
-    margin-top: 12rem;
-    font-weight: 400;
-    color: #31353B;
-    font-size: 16px;
-    line-height: 35px;
-}
-
-.left-content-2 table {
-  border-collapse: collapse;
-  width: 75%;
-}
-
-.left-content-2 td {
-  padding: 0;
-  margin: 0;
-}
-
-.mission-title {
-  text-align: right;
-  width: 30%;
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 40px;
-}
-
-.mission-divider {
-  font-size: 20px;
-  height: 100%;
-  text-align: center;
-}
-
-.mission-description {
-  text-align: left;
-  width: 50%;
-  vertical-align: top;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
-}
+  }
+  
+  .right-content-2, .right-content-3{
+    width: 45%; 
+    text-align: center;
+    margin-top: 7rem;
+  }
+  
+  .image-container {
+    width: 670px;
+    height: 375px;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
