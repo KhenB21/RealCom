@@ -79,16 +79,24 @@
     }
 
     @media (max-width: 768px) {
-        .nav {
+        /* .nav {
             flex-direction: row;
-        }
+            flex: wrap;
+        } */
 
         .navbar {
-            display: none;
+          flex-direction: column;
+            flex: wrap;
+        }
+
+        #navlinks {
+            flex-direction: column;
+            flex: wrap;
         }
 
         .hamburger {
             display: block;
+            flex: wrap;
         }
     }
   </style>
@@ -176,7 +184,8 @@
               padding-left: 10px;
               padding-right: 10px;
               gap: 20px;
-              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+              width: 100%;">
               <p style="font-size: 14px; 
                   display: flex;
                   font-weight: bold;">
@@ -190,7 +199,8 @@
               padding-top: 10px;
               padding-left: 10px;
               padding-right: 10px;
-              gap: 5px;">
+              gap: 5px;
+              width: 100%;">
               <div style="display: flex;
                   flex-direction: column;
                   justify-content: center;
@@ -200,7 +210,8 @@
                   padding-left: 15px;
                   padding-right: 15px;
                   padding-bottom: 5px;
-                  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+                  width: 100%;">
                   <p style="font-size: 12px; line-height: 1;">Condition upon arrival</p>
                   <p style="font-size: 14px; line-height: 0;">no exterior deformity</p>
                   <p style="font-size: 14px; line-height: 0;">no interior deformity</p>
@@ -213,7 +224,8 @@
                 padding-right: 10px;
                 padding-bottom: 10px;
                 gap: 5px;
-                background-color: #f4f4f4;">
+                background-color: #f4f4f4;
+                width: 100%;">
                   <p style="font-size: 12px; line-height: 1;">Media</p>
                   <div style="display: flex;
                               flex-direction: row;
@@ -246,7 +258,7 @@
               padding-left: 10px;
               padding-right: 10px;
               padding-bottom: 10px;
-              height: auto;
+              width: 100%;
               gap: 5px;
               background-color: #e7e7e7;">
               <div style="display: flex;
@@ -257,7 +269,7 @@
                   padding-left: 15px;
                   padding-right: 15px;
                   padding-bottom: 5px;
-                  height: auto;
+                  width: 100%;
                   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
                   <p style="font-size: 12px; line-height: 1;">Services</p>
                   <p style="font-size: 14px; line-height: 0; height: auto;">Repaint</p>
@@ -270,7 +282,7 @@
               padding-left: 10px;
               padding-right: 10px;
               padding-bottom: 10px;
-              height: auto;
+              width: 100%;
               gap: 5px;
               background-color: #e7e7e7;">
               <div style="display: flex;
@@ -282,7 +294,7 @@
                   padding-left: 15px;
                   padding-right: 15px;
                   padding-bottom: 5px;
-                  height: auto;
+                  width: 100%;
                   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
                   <p style="font-size: 12px; line-height: 1;">List of items left inside the vehicle</p>
                   <p style="font-size: 14px; line-height: 0;">water bottle</p>
@@ -1051,16 +1063,21 @@
       /* Medium screens (tablets) */
       @media (max-width: 992px) {
         #container1,  #container2, #container3, #container4{
-          flex-direction: column; 
+          flex-direction: column;
+          flex-wrap: wrap;
+          align-items: center;
+        }
+        .carsbtns {
+          display: none;
         }
       }
       
 
       /* Small screens (phones) */
       @media (max-width: 768px) {
-        #container4{
+        #container1,  #container2, #container3, #container4{
           flex-direction: column; 
-          margin-left: 0;
+          flex-wrap: wrap;
           align-items: center;
         }
       }
@@ -1069,6 +1086,8 @@
       @media (max-width: 480px) {
         #container1,  #container2, #container3, #container4{
           flex-direction: column; 
+          flex-wrap: wrap;
+          align-items: center;
         }
       }
     </style>
