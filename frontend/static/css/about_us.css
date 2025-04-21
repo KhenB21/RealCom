@@ -16,10 +16,9 @@ body::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 300vh; 
+  height: 100vh; 
   background: #C5E856; 
   clip-path: polygon(0 0, 75% 0, 0 75%);
-
   z-index: -1;
 }
 
