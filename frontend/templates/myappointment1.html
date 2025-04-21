@@ -20,7 +20,11 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
-    ></script>
+    >
+      document.querySelector('.navBtn').addEventListener('click', () => {
+        window.location.href = '/myaccount';
+      });
+    </script>
   </head>
   <body>
     <!-- Navbar -->
@@ -38,7 +42,11 @@
           <div class="row">
             <div class="navLinks d-flex flex-wrap justify-content-center">
               <div class="col-auto">
-                <button class="navBtn">My Account</button>
+                <button
+                  class="navBtn"
+                  onclick="window.location.href='myaccount'"
+                >My Account
+                </button>
               </div>
               <div class="col-auto">
                 <button class="navBtn active">
@@ -73,7 +81,8 @@
       <!-- Tab Controls -->
       <div class="tab-cont d-flex justify-content-center mb-3">
         <button class="tab-btn active">On Going</button>
-        <button class="tab-btn">Completed</button>
+        <a href="/my-appointment-completed" class="tab-btn" style="text-decoration: none; text-align: center;">Completed
+        </a>
       </div>
 
       <div class="row">
