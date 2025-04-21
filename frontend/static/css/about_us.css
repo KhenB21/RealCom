@@ -58,7 +58,6 @@ html, body {
   align-items: center;
   gap: 20px;
   scroll-snap-align: start;
-  position: relative;
 }
   
   .image-overlay {
@@ -104,22 +103,42 @@ html, body {
     font-weight: 600;
     color: #31353B;
   }
+
+  .right-content{
+    font-weight: 400;
+    color: #31353B;
+  }
   
-  .left-content-1{
+  
+  .left-corporatetalk{
     width: 37%;
-    margin-top: 12rem;
+    margin-top: -12rem;
     font-size: 20px;
     line-height: 35px;
   }
+
+  .right-corporatetalk{
+    width: 37%;
+    text-align: left;
+    margin-top: 7rem;
+    font-size: 16px;
+    line-height: 25px;
+  }
   
-  .left-content-2, .left-content-3{
+  .left-mission, .left-vision{
     width: 40%;
-    margin-top: 17rem;
+    margin-top: 2rem;
     font-size: 20px;
     line-height: 30px;
   }
   
-  .left-content-3 {
+  .right-mission, .right-vision{
+    width: 45%; 
+    text-align: center;
+    margin-top: -2rem;
+  }
+
+  .left-vision {
     margin-left: 7rem;
   }
   
@@ -155,25 +174,10 @@ html, body {
     font-size: 15px;
     line-height: 22px;
   }
+
+
   
-  .right-content{
-    font-weight: 400;
-    color: #31353B;
-  }
   
-  .right-content-1{
-    width: 37%;
-    text-align: left;
-    margin-top: 19rem;
-    font-size: 16px;
-    line-height: 25px;
-  }
-  
-  .right-content-2, .right-content-3{
-    width: 45%; 
-    text-align: center;
-    margin-top: 7rem;
-  }
   
   .image-container {
     width: 670px;
@@ -182,9 +186,9 @@ html, body {
     overflow: hidden;
   }
   
-  .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
   
