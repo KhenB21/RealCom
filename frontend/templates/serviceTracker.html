@@ -18,55 +18,130 @@
     ></script>
   </head>
 
-  <body style="overflow: hidden;">
+  <body style="overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;">
 
-    <div class="nav" style="display: flex; flex-direction: row;">
-      <img src="{% static 'images/5.svg'%}" alt="" 
-        style="position: absolute;
-            margin-left: auto;
-            width: 120px;
-            height: 120px;
-            margin-top: -10px;"/>
-        <nav class="navbar" style="display: flex; flex-direction: row;">
-            <div class="nav-links" style="display: flex; flex-direction: row;">
-                <button>My Account</button>
-                <button>My Appointments</button>
-                <button>Book an Appointment</button>
-                <button style="background-color: #31353B;
-                    color: #f4f4f4;">Service Tracker</button>
-                <button>Services</button>
-                <button>Contact Us</button>
-                <button>AutoMobil Sport</button>
-            </div>
-        </nav>
-    </div>
+    <div class="nav">
+      <img src="{% static 'images/5.svg' %}" alt="Logo"
+          style="position: absolute;
+                 left: 0;
+                 top: 0;
+                 width: 120px;
+                 height: 120px;
+                 margin: 10px;"/>
+      
+      <div class="hamburger" id="hamburger-menu" 
+          style="display: none; 
+          flex-direction: column; 
+          cursor: pointer; 
+          top: 10%; 
+          left: 10%; 
+          gap: 5px;">
+          <div style="width: 30px; height: 4px; background-color: #31353B;"></div>
+          <div style="width: 30px; height: 4px; background-color: #31353B;"></div>
+          <div style="width: 30px; height: 4px; background-color: #31353B;"></div>
+      </div>
+  
+      <nav class="navbar" id="nav-links" style="display: flex; flex-direction: row; margin-left: auto;">
+          <div class="nav-links" style="display: flex; flex-direction: row;">
+              <button>My Account</button>
+              <button>My Appointments</button>
+              <button>Book an Appointment</button>
+              <button style="background-color: #31353B; color: #f4f4f4;">Service Tracker</button>
+              <button>Services</button>
+              <button>Contact Us</button>
+              <button>AutoMobil Sport</button>
+          </div>
+      </nav>
+  </div>
+
+  <style>
+    .nav {
+      position: absolute;
+        display: flex;
+        flex-direction: row;
+        top: 0;
+        right: 0;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .nav-links button {
+        padding: 10px 15px;
+        font-size: 14px;
+        border: none;
+        cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+        .nav {
+            flex-direction: row;
+        }
+
+        .navbar {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+        }
+    }
+  </style>
+
+  <script>
+    document.getElementById("hamburger-menu").addEventListener("click", function() {
+        const navLinks = document.getElementById("nav-links");
+        if (navLinks.style.display === "flex") {
+            navLinks.style.display = "none";
+        } else {
+            navLinks.style.display = "flex";
+            navLinks.style.flexDirection = "column";
+            navLinks.style.backgroundColor = "#232323";
+        }
+    });
+  </script>
+
+  <div class="tabs" style="display: flex; 
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10%;
+    padding-left: 20%;
+    padding-right: 20%;">
+    <div style="width: 100%;"></div>
+    <button onclick="preServ()" id="pre-servicebtn" style="width: 100%;">Pre-Service</button>
+    <button onclick="inServ()" id="in-servicebtn" style="width: 100%;">In Service</button>
+    <button onclick="postServ()" id="post-servicebtn" style="width: 100%;">Post-Service</button>
+    <button onclick="myCar()" id="my-carbtn" style="width: 100%;">My Car</button>
+  </div>
+
+  <div style="display: flex; 
+            flex-direction: row;
+            justify-content: center;
+            gap: 2%;
+            width: 100%;
+            padding-left: 15%;
+            padding-right: 15%;">
 
     <div class="carsbtns" 
         style="display: flex; 
             flex-direction: column;
-            width: 10%;
-            margin-top: 10%;
-            margin-left: 5%;
+            width: 20%;
             gap: 5px;">
-        <button style="background-color: #DCE61E;">
+        <button style="background-color: #DCE61E; width: auto;">
             <p style="font-size: 14px; font-weight: bold;">Lexus LC 500</p>
-            <p>Booking ID: 1234567890 03-01-2025</p>
+            <p style="line-height: 1;">Booking ID: 1234567890</p>
+            <p style="line-height: 0;">03-01-2025</p>
         </button>
         <button>
             <p style="font-size: 14px; font-weight: bold;">Volkswagen T-Cross</p>
-            <p>Booking ID: 9876543210 03-01-2025</p>
+            <p style="line-height: 1;">Booking ID: 9876543210</p>
+            <p style="line-height: 0;">03-01-2025</p>
         </button>
-    </div>
-
-    <div class="tabs" style="display: flex; 
-        flex-direction: row;
-        width: 100%;
-        margin-top: -17%;
-        margin-left: 17%;">
-        <button onclick="preServ()" id="pre-servicebtn">Pre-Service</button>
-        <button onclick="inServ()" id="in-servicebtn">In Service</button>
-        <button onclick="postServ()" id="post-servicebtn">Post-Service</button>
-        <button onclick="myCar()" id="my-carbtn">My Car</button>
     </div>
 
 
@@ -74,39 +149,40 @@
     <!-- --------------------------------------------------------------------------PRE-SERVICE -->
     <!-- ------------------------------------------------------------------------------------- -->
 
-    <div id="container1" style=" 
+    <div id="container1" style="display: flex;
       flex-direction: row;
       gap: 2%;
       margin-top: 3%;
-      margin-left: 16.5%;
-      width: 100%;">
+      width: 100%;
+      background-color: #e7e7e7;
+      border-radius: 14px;padding: 10px;">
 
       <div class="one" style="display: flex;
           flex-direction: column;
           background-color: #e7e7e7;
           border-radius: 14px;
           padding: 15px;
-          width: 27%;
+          width: 360px;
+          height: 500px;
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
           gap: 5px;">
           <div style="display: flex;
               flex-direction: row;
               justify-content: center;
+              align-items: center;
               background-color: #DCE61E;
               border-radius: 14px;
-              padding-top: 10px;
+              padding-top: 15px;
               padding-left: 10px;
               padding-right: 10px;
-              line-height: 1;
               gap: 20px;
               box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
               <p style="font-size: 14px; 
-                  display: flex; 
-                  align-items: center;
+                  display: flex;
                   font-weight: bold;">
-                  <input type="checkbox" disabled style="margin-right: 8px;"> Car has Arrived at the facility
+                  <input type="checkbox" disabled style="margin-right: 8px;"> Car has arrived at the facility
               </p>
-              <p style="font-size: 12px;">03-01-2025</p>
+              <p style="font-size: 12px; margin-left: auto;">03-01-2025</p>
           </div>
           <div style="display: flex;
               flex-direction: column;
@@ -114,7 +190,6 @@
               padding-top: 10px;
               padding-left: 10px;
               padding-right: 10px;
-              /* width: 100%; */
               gap: 5px;">
               <div style="display: flex;
                   flex-direction: column;
@@ -131,30 +206,29 @@
                   <p style="font-size: 14px; line-height: 0;">no interior deformity</p>
               </div>
               <div style="display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  background-color: #f4f4f4;
-                  border-radius: 14px;
-                  padding-top: 10px;
-                  padding-left: 15px;
-                  padding-right: 15px;
-                  padding-bottom: 5px;
-                  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                flex-direction: column;
+                border-radius: 14px;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-bottom: 10px;
+                gap: 5px;
+                background-color: #f4f4f4;">
                   <p style="font-size: 12px; line-height: 1;">Media</p>
                   <div style="display: flex;
-                      flex-direction: row;
-                      justify-content: center;
-                      gap: 5px;">
-                      <img src="{% static 'images/spider.jpg'%}" alt="" 
-                          style="
-                              width: 84px;
-                              height: 150px;
-                              border-radius: 14px;"/>
-                      <img src="{% static 'images/OIP.jpg'%}" alt="" 
-                          style="
-                              width: 206px;
-                              height: 116px;
-                              border-radius: 14px;"/>
+                              flex-direction: row;
+                              gap: 5px;
+                              overflow-x: auto;
+                              white-space: nowrap;
+                              border-radius: 14px;">
+                              <img src="{% static 'images/spider.jpg' %}"
+                                alt=""
+                                style="border-radius: 14px;
+                                  height: 270px;"/>
+                              <img src="{% static 'images/OIP.jpg' %}"
+                                alt=""
+                                style="border-radius: 14px;
+                                  height: 270px;"/>
                   </div>
               </div>
           </div>
@@ -163,7 +237,7 @@
       <div class="two" style="display: flex;
           flex-direction: column;
           border-radius: 14px;
-          width: 27%;
+          width: 100%;
           gap: 10px;">
           <div style="display: flex;
               flex-direction: column;
@@ -222,7 +296,7 @@
 
       <div class="three" style="display: flex;
           flex-direction: column;
-          width: 20%;
+          width: 100%;
           gap: 5px;">
       
             <div style="display: flex;
@@ -260,20 +334,26 @@
                   color: #E74C3C;
                   font-style: italic;">
                   This is only an ESTIMATION of cost. Additional charges may apply.</p>
-                <p style="font-size: 12px; 
+                <p id="pls-approve" style="font-size: 12px; 
                   line-height: 1;
                   font-style: italic;">
                 Please approve the new cost estimation to continue the transaction.</p>
                 <button id="approve" 
-                  style="width: 200px;
+                  style="display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 70%;
                   height: 30px;
                   border-radius: 14px;
                   font-size: 14px;
                   font-weight: bold;
                   border: 1px solid #2ECC71;">
                   Approve Cost</button>
-                <button class="cancel" 
-                  style="width: 200px;
+                <button id="cancel" 
+                  style="display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 70%;
                   height: 30px;
                   border-radius: 14px;
                   font-size: 14px;
@@ -283,33 +363,91 @@
                   Cancel Transaction</button>
             </div>
       </div>
+
+      <!-- -------------------------------------------------------------------------------ALERTS -->
+    
+      <div id="approved" class="approved" role="alert" 
+        style="position: absolute;
+          display: none;
+          width: 500px;
+          top: 40%;
+          left: 35%;
+          background-color: #2ECC71;
+          color: #ffffff;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          border-radius: 14px;
+          padding: 15px;">
+          <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: right;"></button>  -->
+          <h4 class="a-heading" style="font-weight: bold;">New Cost Estimation APPROVED!</h4>
+          <p>Please make a DOWN PAYMENT to continue the transaction.</p>
+      </div>
+
+      <div id="cancelled" class="cancelled" role="alert" 
+        style="position: absolute;
+          display: none;
+          width: 500px;
+          top: 40%;
+          left: 35%;
+          background-color: #E74C3C;
+          color: #ffffff;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          border-radius: 14px;
+          padding: 15px;">
+          <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: right; background-color: #f4f4f4;"></button> 
+          <h4 class="c-heading" style="font-weight: bold;">TRANSACTION CANCELLED!</h4>
+          <p>Please close this window to take you back to home page.</p>
+      </div>
+
     </div>
+
+    <script>
+        document.getElementById("approve").addEventListener("click", function() {
+            document.getElementById("approved").style.display = "block";
+            document.getElementById("pls-approve").style.display = "none";
+            document.getElementById("approve").style.display = "none";
+            document.getElementById("cancel").style.display = "none";
+        });
+
+        document.getElementById("cancel").addEventListener("click", function() {
+            document.getElementById("cancelled").style.display = "block";
+        });
+
+        document.getElementById("btn-close").addEventListener("click", function() {
+            window.location.href = "/";
+            
+        });
+    </script>
+
 
 
     <!-- ------------------------------------------------------------------------------------- -->
     <!-- ---------------------------------------------------------------------------IN-SERVICE -->
     <!-- ------------------------------------------------------------------------------------- -->
 
-    <div id="container2" style="display: none; 
-      flex-direction: row; 
-      gap: 2%;
-      margin-top: 3%;
-      margin-left: 16.5%;
-      width: 100%;">
-      <div style="display: flex; 
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 27%;
-        height: auto;
+    <div id="container2" style="display: none;
+        flex-direction: row;
+        gap: 2%;
+        margin-top: 3%;
+        width: 100%;
         background-color: #e7e7e7;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-        border-radius: 14px;
-        gap: 5px;
-        padding: 10px;">
+        border-radius: 14px;padding: 10px;">
+        <div style="display: flex;
+          flex-direction: column;
+          background-color: #e7e7e7;
+          border-radius: 14px;
+          padding: 15px;
+          width: 100%;
+          height: 500px;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+          gap: 5px;
+          overflow-x: auto;
+          white-space: nowrap;">
         <div style="display: flex; 
           flex-direction: row;
-          gap: 5px;">
+          gap: 5px;
+          justify-content: center;
+          align-items: center;
+          width: 100%;">
           <div style="display: flex; 
             flex-direction: column;
             width: 100%;
@@ -318,15 +456,14 @@
             background-color: #ffffff;
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
             <p style="font-size: 12px; 
-              width: 265px;
               line-height: 1;">Service</p>
             <p style="font-size: 14px; line-height: 0;">Repaint</p>
           </div>
           <div style="display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            width: 100px;
+            text-align: center;
+            width: 30%;
             padding: 10px;
             border-radius: 14px;
             background-color: #ffffff;
@@ -364,17 +501,20 @@
             box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
           <p style="font-size: 12px; line-height: 1;">Tasks</p>
           <div style="display: flex; 
-            flex-direction: row;">
+            flex-direction: row;
+            width: 100%;">
             <p style="font-size: 14px; line-height: 1;">Clean car</p>
             <p style="font-size: 14px; line-height: 1; margin-left: auto;">03-01-2025</p>
           </div>
           <div style="display: flex; 
-            flex-direction: row;">
+            flex-direction: row;
+            width: 100%;">
             <p style="font-size: 14px; line-height: 0;">Paint</p>
             <p style="font-size: 14px; line-height: 0; margin-left: auto;">03-01-2025</p>
           </div>
           <div style="display: flex; 
-            flex-direction: row;">
+            flex-direction: row;
+            width: 100%;">
             <p style="font-size: 14px; 
               line-height: 1;
               color: #2ECC71;">Polish</p>
@@ -407,67 +547,57 @@
         </div>
       </div>
 
-      <div style="
-        width: 23%;
+      <div style="display: flex;
+        flex-direction: column;
+        width: 100%;
         gap: 5px;">
-      </div>
-
-      <div class="three" style="display: flex;
-          flex-direction: column;
-          width: 20%;
-          gap: 5px;">
       
+        <div style="display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #ffffff;
+            border-radius: 14px;
+            padding-top: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 5px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 12px; line-height: 1;">Findings</p>
+            <p style="font-size: 14px; line-height: 0;">blue painted car</p>
+        </div>
+        <div style="display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 14px;
+            padding-top: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 10px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+            <p style="font-size: 12px; line-height: 1; font-weight: bold;">New Cost Estimation</p>
+            <p style="font-size: 14px; 
+              line-height: 1;
+              font-weight: bold;">
+              30, 000.00</p>
+            <p style="font-size: 12px; 
+              line-height: 1;
+              color: #E74C3C;
+              font-style: italic;">
+              This is only an ESTIMATION of cost. Additional charges may apply.</p>
             <div style="display: flex;
                 flex-direction: column;
                 justify-content: center;
-                background-color: #ffffff;
+                background-color: #f4f4f4;
                 border-radius: 14px;
                 padding-top: 10px;
                 padding-left: 15px;
                 padding-right: 15px;
                 padding-bottom: 5px;
-                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
-                <p style="font-size: 12px; line-height: 1;">Findings</p>
-                <p style="font-size: 14px; line-height: 0;">blue painted car</p>
-            </div>
-            <div style="display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                background-color: #ffffff;
-                border-radius: 14px;
-                padding-top: 10px;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-bottom: 10px;
-                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
-                <p style="font-size: 12px; line-height: 1; font-weight: bold;">New Cost Estimation</p>
-                <p style="font-size: 14px; 
-                  line-height: 1;
-                  font-weight: bold;">
-                  30, 000.00</p>
-                  <p style="font-size: 12px; 
-                  line-height: 1;
-                  font-style: italic;
-                  color: #2ECC71;">
-                NEW ESTIMATION APPROVED!</p>
-                <p style="font-size: 12px; 
-                  line-height: 1;
-                  color: #E74C3C;
-                  font-style: italic;">
-                  This is only an ESTIMATION of cost. Additional charges may apply.</p>
-            </div>
-            <div style="display: flex;
-                flex-direction: column;
-                justify-content: center;
-                background-color: #ffffff;
-                border-radius: 14px;
-                padding-top: 10px;
-                padding-left: 15px;
-                padding-right: 15px;
-                padding-bottom: 5px;
-                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+                width: 100%;">
                 <p style="font-size: 12px; line-height: 1;">Down payment</p>
                 <p style="font-size: 14px; line-height: 0; font-weight: bold;">15, 000.00</p>
             </div>
@@ -482,18 +612,19 @@
 
     <div id="container3" style="display: none;
       flex-direction: row;
-      width: 100%;
-      height: auto;
-      padding: 15px;
-      gap: 5%;
+      gap: 2%;
       margin-top: 3%;
-      margin-left: 16.5%;
+      width: 100%;
       background-color: #e7e7e7;
-      border-radius: 14px;">
+      border-radius: 14px;
+      padding: 10px;
+      background-color: aqua;
+      height: 100px;">
 
         <div style="display: flex;
           flex-direction: column;
-          gap: 5px;">
+          gap: 5px;
+          width: 100%;">
         
           <div style="display: flex;
               flex-direction: column;
@@ -570,10 +701,10 @@
                     font-weight: bold;
                     border: 1px solid #2ECC71;">
                     View Full Bill</button>
-            </div>
           </div>
+        </div>
 
-          <div style="display: none;
+          <div style="display: flex;
             flex-direction: column;
             gap: 5px;">
             <div style="display: flex;
@@ -667,57 +798,106 @@
                 </div>
             </div>
           </div>
+    </div>
         
 
   <!-- ------------------------------------------------------------------------------------- -->
   <!-- ---------------------------------------------------------------------------MY-CAR -->
   <!-- ------------------------------------------------------------------------------------- -->
 
-  <div id="container4" style="display: none; 
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    /* gap: 5%; */
-    margin-top: 3%;
-    margin-left: 3%;
-    background-color: #e7e7e7;
-    border-radius: 14px;">
-    <div style="display: flex; 
-      flex-direction: row;">
+    <div id="container4" style="display: none;
+        flex-direction: column;
+        gap: 2%;
+        margin-top: 3%;
+        width: 100%;
+        background-color: #e7e7e7;
+        border-radius: 14px;padding: 10px;">
+
       <div style="display: flex; 
-        flex-direction: column;">
-        <p>Bay 7</p>
-      </div>
-      <div style="display: flex; 
-        flex-direction: column;">
+        flex-direction: row;
+        gap: 1%;">
+
+        <div style="display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding-top: 15px;
+          padding-right: 15px;
+          padding-left: 15px;
+          border-radius: 14px;
+          background-color: #ffffff;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 14px; font-weight: bold;">Bay 7</p>
+        </div>
+
         <div style="display: flex; 
           flex-direction: row;">
-          <p>Service</p>
-          <p>Repaint</p>
+
+          <div style="display: flex; 
+              flex-direction: row;
+              width: 100%;
+              padding-top: 15px;
+              padding-right: 15px;
+              padding-left: 15px;
+              border-radius: 14px;
+              background-color: #ffffff;
+              box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+              height: 100%;">
+              <div style="display: flex;
+                flex-direction: column;">
+                <p style="font-size: 12px; 
+                  width: 550px;
+                  line-height: 1;">Service</p>
+                <p style="font-size: 14px; line-height: 0;">Repaint</p>
+              </div>
+              <div style="display: flex; 
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-right: 15px;
+                padding-left: 15px;">
+                <p>2:12:34</p>
+              </div>
+          </div>
+
         </div>
-        <div style="display: flex; 
-          flex-direction: row;">
-          <p>2:12:34</p>
+
+        <div style="display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          padding-top: 15px;
+          padding-right: 15px;
+          padding-left: 15px;
+          border-radius: 14px;
+          background-color: #ffffff;
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
+          <p style="font-size: 14px; font-weight: bold;">camera 3</p>
         </div>
+
+        
+
       </div>
+
       <div style="display: flex; 
-        flex-direction: column;">
-        <p>camera 3</p>
+          flex-direction: column;
+          width: 100%;">
+          <img src="{% static 'images/redcar.jpg'%}" alt=""
+            style="display: flex;
+              border-radius: 14px;
+              width: 70%;
+              height: 100%;"/>
       </div>
-      <div style="display: flex; 
-        flex-direction: column;">
-        <img src="{% static 'images/redcar.jpg'%}" alt="" 
-                />
-      </div>
+
     </div>
+
   </div>
 
 
 
+
     <script>
-      document.getElementById("approve").addEventListener("click", function(event) {
-          confirm("Please make a downpayment to start the service, thank you.")
-      });
 
       function showContainer(containerId, activeButtonId) {
           const containers = ["container1", "container2", "container3", "container4"];
@@ -733,47 +913,37 @@
               const btn = document.getElementById(id);
               if (btn) {
                   if (id === activeButtonId) {
-                      btn.style.color = id === "my-carbtn" ? "#31353B" : "#31353B";
+                      btn.style.color = "#31353B";
                       btn.style.backgroundColor = id === "my-carbtn" ? "#DCE61E" : "#f4f4f4";
                   } else {
-                      btn.style.color = id === "my-carbtn" ? "#f4f4f4" : "#f4f4f4";
-                      btn.style.backgroundColor = id === "my-carbtn" ? "#31353B" : "#31353B";
+                      btn.style.color = id === "my-carbtn" ? "#31353B" : "#f4f4f4";
+                      btn.style.backgroundColor = id === "my-carbtn" ? "#DCE61E" : "#31353B";
                   }
               }
           });
       }
 
 
-      function preServ() {
-          showContainer("container1", "pre-servicebtn");
-      }
+        function preServ() {
+            showContainer("container1", "pre-servicebtn");
+        }
 
-      function inServ() {
-          showContainer("container2", "in-servicebtn");
-      }
+        function inServ() {
+            showContainer("container2", "in-servicebtn");
+        }
 
-      function postServ() {
-          showContainer("container3", "post-servicebtn");
-      }
+        function postServ() {
+            showContainer("container3", "post-servicebtn");
+        }
 
-      function myCar() {
-          showContainer("container4", "my-carbtn");
-      }
+        function myCar() {
+            showContainer("container4", "my-carbtn");
+        }
+
     </script>
 
 
     <style>
-        .navbar {
-        position: absolute;
-        top: -8px;
-        right: 0px;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-direction: row;
-        margin-right: 50px;
-      }
 
       .nav-links button {
         background-color: transparent;
@@ -867,12 +1037,12 @@
         transition: background-color 0.3s ease;
       }
 
-      .cancel {
+      #cancel {
         color: #E74C3C;
         background-color: #ffffff;
       }
 
-      .cancel:hover {
+      #cancel:hover {
         background-color: #E74C3C;
         color: #ffffff;
         transition: background-color 0.3s ease;
@@ -880,22 +1050,25 @@
 
       /* Medium screens (tablets) */
       @media (max-width: 992px) {
-        .image-bar img {
-          max-width: 300px;
+        #container1,  #container2, #container3, #container4{
+          flex-direction: column; 
         }
       }
+      
 
       /* Small screens (phones) */
       @media (max-width: 768px) {
-        .image-bar img {
-          max-width: 200px;
+        #container4{
+          flex-direction: column; 
+          margin-left: 0;
+          align-items: center;
         }
       }
 
       /* Extra small screens */
       @media (max-width: 480px) {
-        .image-bar img {
-          max-width: 150px;
+        #container1,  #container2, #container3, #container4{
+          flex-direction: column; 
         }
       }
     </style>
