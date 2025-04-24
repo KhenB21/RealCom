@@ -39,31 +39,95 @@
     <div class="box-for-the-box">
       <div class="services-black-box">
         <div class="button-list">
-          <button class="image-button" style="background-image: url('https://img.freepik.com/free-photo/high-angle-woman-feeling-car-service-form_23-2148327558.jpg?t=st=1745496238~exp=1745499838~hmac=a02b8f92d0d7dfaf936590f35a273ef30baac05f35ec92dbb20b12bf3bbc2899&w=996');">
+          <button class="image-button" id="check-up-button" style="background-image: url('https://img.freepik.com/free-photo/high-angle-woman-feeling-car-service-form_23-2148327558.jpg?t=st=1745496238~exp=1745499838~hmac=a02b8f92d0d7dfaf936590f35a273ef30baac05f35ec92dbb20b12bf3bbc2899&w=996');">
               <span>Check Up</span>
+              <p> Not sure what's wrong? We can always check it for you!.</p>
           </button>
-          <button class="image-button" style="background-image: url('/static/images/image.png');">
+          <button class="image-button" id="oilchange-button" style="background-image: url('https://images.pexels.com/photos/7541352/pexels-photo-7541352.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <span>Oil Change</span>
           </button>
-          <button class="image-button" style="background-image: url('/static/images/image.png');">
+          <button class="image-button" style="background-image: url('https://images.pexels.com/photos/5260115/pexels-photo-5260115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <span>Tire Replacement</span>
           </button>
-          <button class="image-button" style="background-image: url('/static/images/image.png');">
+          <button class="image-button" style="background-image: url('https://images.pexels.com/photos/13065689/pexels-photo-13065689.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <span>Battery Replacement</span>
           </button>
-          <button class="image-button" style="background-image: url('/static/images/image.png');">
+          <button class="image-button" style="background-image: url('https://images.pexels.com/photos/8651900/pexels-photo-8651900.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
             <span>Brake Inspection</span>
           </button>
-          <button class="image-button" style="background-image: url('/static/images/image.png');">
+          <button class="image-button" style="background-image: url('https://plus.unsplash.com/premium_photo-1661443396451-0ce1776a483b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzd8fGNhciUyMHBhaW50aW5nfGVufDB8fDB8fHww');">
             <span>Repainting</span>
           </button>
-          <button class="image-button" style="background-image: url('/static/images/image.png');">
-            <span>Repainting</span>
-          </button>
-          <!-- Add more buttons as needed -->
+        </div>
+    
+        <div class="cards-container">
+          <div id="check-up-card" class="white-card">
+            <div class="card-content">
+              <h2>Check Up</h2>
+              <p>Regular check-ups are essential for maintaining your vehicle's health. Our experts will inspect all critical components to ensure everything is in top shape.</p>
+              <button class="card-button">Book this service</button>
+            </div> 
+          </div>
+    
+          <div id="oilchange-card" class="white-card">
+            <div class="card-content">
+              <h2>Oil Change</h2>
+              <p>You need to change oil?</p>
+              <button class="card-button">Book this service</button>
+            </div> 
+          </div>
         </div>
       </div>
     </div>
-
-  </body>
-</html>
+    
+    <script>
+      const checkUpButton = document.getElementById('check-up-button');
+      const checkUpCard = document.getElementById('check-up-card');
+      
+      // Ensure the card is hidden by default
+      checkUpCard.style.display = 'none';
+      
+      checkUpButton.addEventListener('click', function() {
+          console.log("Check-up Button clicked");
+          
+          // Hide the other card if it's visible
+          if (oilChangeCard.style.display === "flex") {
+              oilChangeCard.style.display = "none";
+              console.log("Oil Change Card hidden");
+          }
+          
+          // Toggle the visibility of the Check-up card
+          if (checkUpCard.style.display === "none") {
+              checkUpCard.style.display = "flex"; 
+              console.log("Check-up Card shown");
+          } else {
+              checkUpCard.style.display = "none"; 
+              console.log("Check-up Card hidden");
+          }
+      });
+    
+      const oilChangeButton = document.getElementById('oilchange-button');
+      const oilChangeCard = document.getElementById('oilchange-card');
+      
+      // Ensure the oil change card is hidden by default
+      oilChangeCard.style.display = 'none';
+      
+      oilChangeButton.addEventListener('click', function() {
+          console.log("Oil Change Button clicked");
+          
+          // Hide the other card if it's visible
+          if (checkUpCard.style.display === "flex") {
+              checkUpCard.style.display = "none";
+              console.log("Check-up Card hidden");
+          }
+          
+          // Toggle the visibility of the Oil Change card
+          if (oilChangeCard.style.display === "none") {
+              oilChangeCard.style.display = "flex"; 
+              console.log("Oil Change Card shown");
+          } else {
+              oilChangeCard.style.display = "none"; 
+              console.log("Oil Change Card hidden");
+          }
+      });
+</script>
