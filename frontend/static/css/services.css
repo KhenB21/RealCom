@@ -53,3 +53,99 @@ body {
     align-items: center;
     height: 85vh;
 }
+
+/* Black box container */
+.services-black-box {
+  background-color: #31353B;
+  display: flex;
+  flex-direction: row; /* side-by-side layout */
+  align-items: flex-start;
+  border-radius: 20px;
+  width: 72.25rem;
+  height: 34.375rem;
+  padding: 2rem;
+  gap: 2rem;
+  overflow: hidden; /* prevent outer overflow */
+}
+.button-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-left: 0.5rem;
+  direction: rtl; /* Flip scroll direction */
+}
+
+.button-list > * {
+  direction: ltr; /* Flip content back to normal */
+  flex-shrink: 0; /* Add this */
+}
+
+.button-list::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+.button-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.button-list::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 3px;
+}
+
+.button-list::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.image-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  border-radius: 20px;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  width: 259px;
+  height: 89px;
+  overflow: hidden;
+}
+
+.image-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4); /* dim level */
+  z-index: 0;
+  transition: background-color 0.3s ease;
+}
+
+.image-button:hover::before {
+  background-color: rgba(0, 0, 0, 0.6); /* dim more on hover */
+}
+
+.image-button span {
+  position: relative;
+  z-index: 1;
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.image-button:hover span {
+  color: #DCE61E;
+}
