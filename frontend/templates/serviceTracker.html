@@ -22,7 +22,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    align-items: center;">
+    align-items: center;
+    background-color: #f4f4f4;">
 
     <div class="nav">
       <img src="{% static 'images/5.svg' %}" alt="Logo"
@@ -46,11 +47,11 @@
       </div>
   
       <nav class="navbar" id="nav-links" style="display: flex; flex-direction: row; margin-left: auto;">
-          <div class="nav-links" style="display: flex; flex-direction: row;">
+          <div class="nav-links" style="display: flex; flex-direction: row; gap: 1px;">
               <button>My Account</button>
               <button>My Appointments</button>
               <button>Book an Appointment</button>
-              <button style="background-color: #31353B; color: #f4f4f4;">Service Tracker</button>
+              <button style="background-color: #31353B; color: #f4f4f4; border-radius: 14px;">Service Tracker</button>
               <button>Services</button>
               <button>Contact Us</button>
               <button>AutoMobil Sport</button>
@@ -119,12 +120,19 @@
     width: 100%;
     margin-top: 10%;
     padding-left: 20%;
-    padding-right: 20%;">
+    padding-right: 20%;
+    justify-content: center;">
     <div style="width: 100%;"></div>
     <button onclick="preServ()" id="pre-servicebtn" style="width: 100%;">Pre-Service</button>
     <button onclick="inServ()" id="in-servicebtn" style="width: 100%;">In Service</button>
     <button onclick="postServ()" id="post-servicebtn" style="width: 100%;">Post-Service</button>
     <button onclick="myCar()" id="my-carbtn" style="width: 100%;">My Car</button>
+    <div style="position: absolute;
+      background-color: #31353B;
+      width: 70%;
+      height: 1px;
+      align-self: flex-end;
+      border-radius: 14px;"></div>
   </div>
 
   <div style="display: flex; 
@@ -249,8 +257,7 @@
       <div class="two" style="display: flex;
           flex-direction: column;
           border-radius: 14px;
-          width: 100%;
-          gap: 10px;">
+          width: 100%;">
           <div style="display: flex;
               flex-direction: column;
               border-radius: 14px;
@@ -259,7 +266,7 @@
               padding-right: 10px;
               padding-bottom: 10px;
               width: 100%;
-              gap: 5px;
+              gap: 1%;
               background-color: #e7e7e7;">
               <div style="display: flex;
                   flex-direction: column;
@@ -346,10 +353,22 @@
                   color: #E74C3C;
                   font-style: italic;">
                   This is only an ESTIMATION of cost. Additional charges may apply.</p>
+                <p id="approvedd" style="display: none;
+                  font-size: 14px; 
+                  line-height: 1;
+                  font-style: italic;
+                  font-weight: bold;
+                  color: #2ECC71;">
+                  APPROVED</p>
+                <p id="down" style="display: none;
+                  font-size: 14px; 
+                  line-height: 1;
+                  font-style: italic;">
+                  Please make a DOWN PAYMENT to continue to transaction.</p>
                 <p id="pls-approve" style="font-size: 12px; 
                   line-height: 1;
                   font-style: italic;">
-                Please approve the new cost estimation to continue the transaction.</p>
+                  Please approve the new cost estimation to continue the transaction.</p>
                 <button id="approve" 
                   style="display: flex;
                   justify-content: center;
@@ -389,7 +408,7 @@
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
           border-radius: 14px;
           padding: 15px;">
-          <!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: right;"></button>  -->
+          <button type="button" class="btn-close" id="btn-close1" data-bs-dismiss="alert" aria-label="Close" style="float: right;"></button> 
           <h4 class="a-heading" style="font-weight: bold;">New Cost Estimation APPROVED!</h4>
           <p>Please make a DOWN PAYMENT to continue the transaction.</p>
       </div>
@@ -405,7 +424,7 @@
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
           border-radius: 14px;
           padding: 15px;">
-          <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float: right; background-color: #f4f4f4;"></button> 
+          <button type="button" class="btn-close" id="btn-close2" data-bs-dismiss="alert" aria-label="Close" style="float: right; background-color: #f4f4f4;"></button> 
           <h4 class="c-heading" style="font-weight: bold;">TRANSACTION CANCELLED!</h4>
           <p>Please close this window to take you back to home page.</p>
       </div>
@@ -418,13 +437,20 @@
             document.getElementById("pls-approve").style.display = "none";
             document.getElementById("approve").style.display = "none";
             document.getElementById("cancel").style.display = "none";
-        });
+            document.getElementById("approvedd").style.display = "block";
+            document.getElementById("down").style.display = "block";
+          });
 
         document.getElementById("cancel").addEventListener("click", function() {
             document.getElementById("cancelled").style.display = "block";
         });
 
-        document.getElementById("btn-close").addEventListener("click", function() {
+        document.getElementById("btn-close1").addEventListener("click", function() {
+          document.getElementById("approved").style.display = "none";
+            
+        });
+
+        document.getElementById("btn-close2").addEventListener("click", function() {
             window.location.href = "/";
             
         });
@@ -613,6 +639,7 @@
                 <p style="font-size: 12px; line-height: 1;">Down payment</p>
                 <p style="font-size: 14px; line-height: 0; font-weight: bold;">15, 000.00</p>
             </div>
+          </div>
       </div>
 
     </div>
@@ -629,14 +656,33 @@
       width: 100%;
       background-color: #e7e7e7;
       border-radius: 14px;
-      padding: 10px;
-      background-color: aqua;
-      height: 100px;">
+      padding: 10px;">
 
         <div style="display: flex;
           flex-direction: column;
           gap: 5px;
-          width: 100%;">
+          width: 360px;
+          height: 500px;">
+
+          <div style="display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: #DCE61E;
+            border-radius: 14px;
+            padding-top: 15px;
+            padding-left: 10px;
+            padding-right: 10px;
+            gap: 20px;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+            width: 100%;">
+            <p style="font-size: 14px; 
+                display: flex;
+                font-weight: bold;">
+                <input type="checkbox" disabled style="margin-right: 8px;"> Car has been released
+            </p>
+            <p style="font-size: 12px; margin-left: auto;">03-01-2025</p>
+          </div>
         
           <div style="display: flex;
               flex-direction: column;
@@ -674,7 +720,7 @@
                 color: #2ECC71;">
               NEW ESTIMATION APPROVED!</p>
               <p style="font-size: 12px; 
-                line-height: 0;
+                line-height: 1;
                 color: #E74C3C;
                 font-style: italic;">
                 This is only an ESTIMATION of cost. Additional charges may apply.</p>
@@ -757,7 +803,7 @@
                 padding-bottom: 5px;
                 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
                 <p style="font-size: 12px; line-height: 1;">Results</p>
-                <p style="font-size: 14px; line-height: 0;">Successfully repainted car ith red paint.</p>
+                <p style="font-size: 14px; line-height: 1;">Successfully repainted car with red paint.</p>
                 <p style="font-size: 14px; line-height: 1;">Polished and ready.</p>
                 <p style="font-size: 14px; line-height: 0;">No exterior deformity</p>
             </div>
@@ -766,7 +812,9 @@
                 justify-content: center;
                 align-items: center;
                 width: 100;
-                padding: 10px;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
                 border-radius: 14px;
                 background-color: #ffffff;
                 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
@@ -777,7 +825,9 @@
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                padding: 10px;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
                 border-radius: 14px;
                 background-color: #ffffff;
                 box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
@@ -819,11 +869,12 @@
 
     <div id="container4" style="display: none;
         flex-direction: column;
-        gap: 2%;
         margin-top: 3%;
         width: 100%;
+        height: 100%;
         background-color: #e7e7e7;
-        border-radius: 14px;padding: 10px;">
+        border-radius: 14px;
+        padding: 10px;">
 
       <div style="display: flex; 
         flex-direction: row;
@@ -837,7 +888,7 @@
           padding-right: 15px;
           padding-left: 15px;
           border-radius: 14px;
-          background-color: #ffffff;
+          background-color: #DCE61E;
           box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);">
           <p style="font-size: 14px; font-weight: bold;">Bay 7</p>
         </div>
@@ -854,11 +905,12 @@
               border-radius: 14px;
               background-color: #ffffff;
               box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-              height: 100%;">
+              height: 100%;
+              gap: 100%;">
               <div style="display: flex;
                 flex-direction: column;">
                 <p style="font-size: 12px; 
-                  width: 550px;
+                  width: 100%;
                   line-height: 1;">Service</p>
                 <p style="font-size: 14px; line-height: 0;">Repaint</p>
               </div>
@@ -898,8 +950,9 @@
           <img src="{% static 'images/redcar.jpg'%}" alt=""
             style="display: flex;
               border-radius: 14px;
-              width: 70%;
-              height: 100%;"/>
+              width: 100%;
+              height: 100%;
+              margin-top: 1%;"/>
       </div>
 
     </div>
@@ -911,29 +964,43 @@
 
     <script>
 
-      function showContainer(containerId, activeButtonId) {
-          const containers = ["container1", "container2", "container3", "container4"];
-          containers.forEach(id => {
-              const container = document.getElementById(id);
-              if (container) {
-                  container.style.display = id === containerId ? "flex" : "none";
-              }
-          });
+function showContainer(containerId, activeButtonId) {
+    const containers = ["container1", "container2", "container3", "container4"];
+    containers.forEach(id => {
+        const container = document.getElementById(id);
+        if (container) {
+            container.style.display = id === containerId ? "flex" : "none";
+        }
+    });
 
-          const buttons = ["pre-servicebtn", "in-servicebtn", "post-servicebtn", "my-carbtn"];
-          buttons.forEach(id => {
-              const btn = document.getElementById(id);
-              if (btn) {
-                  if (id === activeButtonId) {
-                      btn.style.color = "#31353B";
-                      btn.style.backgroundColor = id === "my-carbtn" ? "#DCE61E" : "#f4f4f4";
-                  } else {
-                      btn.style.color = id === "my-carbtn" ? "#31353B" : "#f4f4f4";
-                      btn.style.backgroundColor = id === "my-carbtn" ? "#DCE61E" : "#31353B";
-                  }
-              }
-          });
-      }
+    const buttons = ["pre-servicebtn", "in-servicebtn", "post-servicebtn", "my-carbtn"];
+    buttons.forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) {
+            if (id === activeButtonId) {
+                if (id === "my-carbtn") {
+                    // Specific logic for my-carbtn when active
+                    btn.style.color = "#31353B";
+                    btn.style.backgroundColor = "#DCE61E";
+                } else {
+                    // Logic for other buttons when active
+                    btn.style.color = "#f4f4f4";
+                    btn.style.backgroundColor = "#31353B";
+                }
+            } else {
+                if (id === "my-carbtn") {
+                    // Specific logic for my-carbtn when inactive
+                    btn.style.color = "#DCE61E";
+                    btn.style.backgroundColor = "#f4f4f4";
+                } else {
+                    // Logic for other buttons when inactive
+                    btn.style.color = "#31353B";
+                    btn.style.backgroundColor = "#f4f4f4";
+                }
+            }
+        }
+    });
+}
 
 
         function preServ() {
@@ -966,11 +1033,13 @@
         border: none;
         outline: none;
         padding-left: 20px;
-        padding-right: 20px; 
+        padding-right: 20px;
+        font-weight: bold;
       }
 
       .nav-links button:hover {
         background-color: #31353B;
+        border-radius: 14px;
         color: #f4f4f4;
         transition: background-color 0.3s ease;
       }
@@ -993,11 +1062,11 @@
       }
 
       #pre-servicebtn {
-        color: #31353B;
-        background-color: #f4f4f4;
+        color: #f4f4f4;
+        background-color: #31353B ;
         border-radius: 14px;
         border: none;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); */
         width: 20%;
         height: 30px;
         font-size: 14px;
@@ -1007,21 +1076,21 @@
       #in-servicebtn, #post-servicebtn {
         border-radius: 14px;
         border: none;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-        background-color: #31353B;
+        /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); */
+        background-color: #f4f4f4;
         width: 20%;
         height: 30px;
         font-size: 14px;
-        color: #f4f4f4;
+        color: #31353B ;
         font-weight: bold;
       }
 
       #my-carbtn {
         border-radius: 14px;
-        border: none;
-        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-        background-color: #DCE61E;
-        color: #31353B;
+        border: #DCE61E solid 1px;
+        /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5); */
+        background-color: #f4f4f4;
+        color: #DCE61E;
         width: 20%;
         height: 30px;
         font-size: 14px;
@@ -1079,6 +1148,9 @@
           flex-direction: column; 
           flex-wrap: wrap;
           align-items: center;
+        }
+        .carsbtns {
+          display: none;
         }
       }
 
